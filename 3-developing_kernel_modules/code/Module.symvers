@@ -1,0 +1,3 @@
+0x00000000	exp_int	/home/dell/Desktop/Linux_course/linux_device_drivers/Excersise/3-developing_kernel_modules/code/core	EXPORT_SYMBOL_GPL	
+0x00000000	llkd_sysinfo2	/home/dell/Desktop/Linux_course/linux_device_drivers/Excersise/3-developing_kernel_modules/code/core	EXPORT_SYMBOL	
+0x00000000	get_skey	/home/dell/Desktop/Linux_course/linux_device_drivers/Excersise/3-developing_kernel_modules/code/core	EXPORT_SYMBOL	

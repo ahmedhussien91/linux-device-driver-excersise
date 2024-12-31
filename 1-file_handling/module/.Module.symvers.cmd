@@ -1,0 +1,1 @@
+savedcmd_/home/dell/Desktop/Linux_course/linux_device_drivers/Excersise/1-file_handling/module/Module.symvers :=  scripts/mod/modpost -M        -o /home/dell/Desktop/Linux_course/linux_device_drivers/Excersise/1-file_handling/module/Module.symvers -T /home/dell/Desktop/Linux_course/linux_device_drivers/Excersise/1-file_handling/module/modules.order -i Module.symvers -e 

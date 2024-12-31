@@ -1,0 +1,1 @@
+savedcmd_/home/dell/Desktop/Linux_course/linux_device_drivers/Excersise/1-file_handling/module/ioctl_kmodule.mod := printf '%s\n'   ioctl_kmodule.o | awk '!x[$$0]++ { print("/home/dell/Desktop/Linux_course/linux_device_drivers/Excersise/1-file_handling/module/"$$0) }' > /home/dell/Desktop/Linux_course/linux_device_drivers/Excersise/1-file_handling/module/ioctl_kmodule.mod
