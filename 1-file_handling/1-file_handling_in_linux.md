@@ -533,5 +533,227 @@ module_exit(example_exit);
 
 - then run on target using `./ioctl_userApp` 
 
-  > 
+  > [ 1651.994043] Device opened
+  > Value read from device: 42[ 1652.020430] Value written by user: 100
+  >
+  > Value written to device: 100[ 1652.029927] Data received: val1=10, val2=20
+  >
+  > Modified data: val1=20, val2=40[ 1652.036765] Device closed
+
+### 4. fcntl(int fd, int op, ... /* arg */ ) 
+
+[man](https://man7.org/linux/man-pages/man2/fcntl.2.html)
+
+The `fcntl()` system call performs a range of control operations on an open file descriptor `fd`.
+
+The `fcntl()` can take an optional third argument.  Whether or not this argument is required is determined by `op`.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <errno.h>
+
+int main() {
+    int fd;
+    struct flock lock;
+
+    // Open a file
+    fd = open("example.txt", O_RDWR | O_CREAT, 0666);
+    if (fd == -1) {
+        perror("open");
+        exit(EXIT_FAILURE);
+    }
+
+    // Get file status flags
+    int flags = fcntl(fd, F_GETFL);
+    if (flags == -1) {
+        perror("fcntl");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+    printf("File status flags: %d\n", flags);
+
+    // Set file status flags
+    flags |= O_APPEND;
+    if (fcntl(fd, F_SETFL, flags) == -1) {
+        perror("fcntl");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+    printf("File status flags set to append mode\n");
+
+    // Get file descriptor flags
+    int fd_flags = fcntl(fd, F_GETFD);
+    if (fd_flags == -1) {
+        perror("fcntl");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+    printf("File descriptor flags: %d\n", fd_flags);
+
+    // Set file descriptor flags
+    fd_flags |= FD_CLOEXEC;
+    if (fcntl(fd, F_SETFD, fd_flags) == -1) {
+        perror("fcntl");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+    printf("File descriptor flags set to close-on-exec\n");
+
+    // Set a write lock on the file
+    lock.l_type = F_WRLCK;
+    lock.l_whence = SEEK_SET;
+    lock.l_start = 0;
+    lock.l_len = 0; // Lock the whole file
+    if (fcntl(fd, F_SETLK, &lock) == -1) {
+        perror("fcntl");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+    printf("Write lock set on the file\n");
+
+    // Release the lock
+    lock.l_type = F_UNLCK;
+    if (fcntl(fd, F_SETLK, &lock) == -1) {
+        perror("fcntl");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+    printf("Lock released\n");
+
+    // Close the file
+    close(fd);
+    return 0;
+}
+```
+
+This example demonstrates how to use `fcntl` to:
+
+1. Get and set file status flags.
+2. Get and set file descriptor flags.
+3. Set and release a write lock on a file.
+
+#### Write lock
+
+A write lock, also known as an exclusive lock, is used to prevent other processes from reading or writing to a file while the lock is held. When a write lock is set on a file, it ensures that only the process that holds the lock can write to the file, and no other process can read or write to it until the lock is released.
+
+This is useful for ensuring data consistency and preventing race conditions when multiple processes need to access the same file.
+
+Here is a brief summary of the steps to set a write lock using `fcntl`:
+
+1. Open the file using the `open` system call.
+2. Initialize a `struct flock` structure and set its `l_type` field to `F_WRLCK`.
+3. Use the `fcntl` system call with the `F_SETLK` command to apply the lock.
+4. Perform the necessary file operations while the lock is held.
+5. Release the lock by setting the `l_type` field to `F_UNLCK` and using `fcntl` again with the `F_SETLK` command.
+
+### 5. readv & writev
+
+[man](https://man7.org/linux/man-pages/man2/readv.2.html)
+
+The `readv()` and `writev()` system calls perform scatter-gather I/O
+
+The `readv()` system call works just like `read()` except that multiple buffers are filled.
+The `writev()` system call works just like `write()` except that multiple buffers are written out.
+
+```c
+#include <sys/uio.h>
+// Returns number of bytes read, 0 on EOF, or –1 on error
+ssize_t readv(int fd, const struct iovec *iov, int iovcnt);
+
+// Returns number of bytes written, or –1 on error
+ssize_t writev(int fd, const struct iovec *iov, int iovcnt);
+```
+
+Example: 
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/uio.h>
+#include <string.h>
+
+void usage(const char *progname) {
+    fprintf(stderr, "Usage: %s <filename>\n", progname);
+    exit(EXIT_FAILURE);
+}
+
+int main(int argc, char *argv[]) {
+    if (argc != 2) {
+        usage(argv[0]);
+    }
+
+    const char *filename = argv[1];
+    int fd;
+    struct iovec iov[2];
+    ssize_t nr;
+
+    // Data to write
+    char *buf1 = "Hello, ";
+    char *buf2 = "world!\n";
+
+    // Open the file for writing
+    fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0666);
+    if (fd == -1) {
+        perror("open");
+        exit(EXIT_FAILURE);
+    }
+
+    // Initialize the iovec structures for writing
+    iov[0].iov_base = buf1;
+    iov[0].iov_len = strlen(buf1);
+    iov[1].iov_base = buf2;
+    iov[1].iov_len = strlen(buf2);
+
+    // Write the data
+    nr = writev(fd, iov, 2);
+    if (nr == -1) {
+        perror("writev");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+    printf("Wrote %zd bytes\n", nr);
+
+    close(fd);
+
+    // Open the file for reading
+    fd = open(filename, O_RDONLY);
+    if (fd == -1) {
+        perror("open");
+        exit(EXIT_FAILURE);
+    }
+
+    // Buffers to read into
+    char buf3[7];
+    char buf4[7];
+
+    // Initialize the iovec structures for reading
+    iov[0].iov_base = buf3;
+    iov[0].iov_len = sizeof(buf3) - 1;
+    iov[1].iov_base = buf4;
+    iov[1].iov_len = sizeof(buf4) - 1;
+
+    // Read the data
+    nr = readv(fd, iov, 2);
+    if (nr == -1) {
+        perror("readv");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+    printf("Read %zd bytes\n", nr);
+
+    // Null-terminate the buffers
+    buf3[iov[0].iov_len] = '\0';
+    buf4[iov[1].iov_len] = '\0';
+
+    printf("Read data: '%s%s'\n", buf3, buf4);
+
+    close(fd);
+    return 0;
+}
+```
 
