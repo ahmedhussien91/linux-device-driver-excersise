@@ -16,7 +16,7 @@ all:
 endif
 
 clean:
-	sudo rm /srv/nfs4/nfsroot_bb/root/*.ko
+	# sudo rm /srv/nfs4/nfsroot_bb/root/*.ko
 	$(MAKE) -C $(KDIR) M=$(PWD) clean
 
 # Target to print the values of SRCS and PROGS
