@@ -757,3 +757,8 @@ int main(int argc, char *argv[]) {
 }
 ```
 
+`./readv_writev log.txt`
+
+> Wrote 14 bytes
+> Read 12 bytes
+> Read data: 'Hello, world'
