@@ -1,5 +1,14 @@
 # Developing your first Module
 
+## Intro
+
+- A Module is a code written to be a part of kernel
+- Extending Kernel with module allows:
+  - extend kernel features in run time
+  - fast startup of kernel, then loading extra features later
+  - extending the kernel features when needed
+    - Ex. load the module when specific network feature is needed
+
 ## Create your first module
 
 create `hello.c` file 
@@ -24,6 +33,30 @@ MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("Greeting module");
 MODULE_AUTHOR("William Shakespeare");
 ```
+
+- `module_init(hello_init);` macro to registers the function `hello_init` to be called when the module is **loaded** into the kernel.
+
+-  `module_exit(hello_exit);` macro to registers the function `hello_exit` to be called when the module is **unloaded** into the kernel.
+
+- `__init` compiler directive to place this function into specific section `.init`
+
+  - This `.init` is removed after loading the module.
+
+  - if module is compiled statically into kernel, it frees `.init` section, 
+
+    - startup printk at the end of the linux startup
+
+    ![image-20250112072615973](./assets/image-20250112072615973.png)
+
+- `__exit` compiler directive to place this function into specific section, `__exit` section is removed if:
+
+  - module compiled statically into kernel
+  - module unloading is not enabled
+
+- `include/linux/init.h`![image-20250112073717600](./assets/image-20250112073717600.png)
+
+- `MODULE_LICENSE()`, `MODULE_DESCRIPTION()` and `MODULE_AUTHOR()`, declare meta data about the module
+  - try `modinfo` after loading the module 
 
 create `makefile`
 
@@ -51,7 +84,7 @@ print-vars:
 	@echo "PROGS = $(PROGS)"
 ```
 
-​	
+
 
 ## Printk and log lvls in modules
 
@@ -195,6 +228,7 @@ MODULE_DESCRIPTION("Jiffies Example");
 Note:
 - To handle overflow, the kernel provides macros like `time_before()` and `time_after()`
 - `schedule_timeout()` used to do delays in the kernel, Ex A delay of 5 seconds would be represented as:  
+    
     ```c
     unsigned long delay = 5 * HZ;
     schedule_timeout(delay);
@@ -244,7 +278,5 @@ Note:
 
     ```
     my_module:example_function(): Test log message
-    
     ```
-
     

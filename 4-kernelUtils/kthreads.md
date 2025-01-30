@@ -1,44 +1,57 @@
-# what is a process ? 
+# What is a Program ? 
 
-A **process** is an instance of an executing program
+A **program** is a file containing information about how it should run in runtime.
 
-A **program** is a file containing information how to construct a process in runtime
+A **Program** contain:
 
-Program contain:
+- Binary format identification -> **[elf file header](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)** `readelf -h`.
 
-- Binary format identification -> **[elf file header](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)** `readelf -h`
+- Machine-language instructions: .text -> what the program should do in runtime? main code of the program.
 
-- Machine-language instructions: .text
+- Program entry-point address: main(), __start.
 
-- Program entry-point address: main(), __start
+- Data: .rodata, .data.
 
-- Data: .rodata, .data
+- Symbol and relocation tables: addresses of symbols and unlinked symbols.
 
-- Symbol and relocation tables: addresses of symbols and unlinked symbols
-
-- Shared-library and dynamic-linking information: `readelf -d`
+- Shared-library and dynamic-linking information: `readelf -d`.
 
   
 
-use `readelf` to see different parts of the elf
+use `readelf` to see different parts of the elf:
 
-`readelf -S <executable>` to see different sections of the program
+- `readelf -S <executable>` to see different sections of the program
+- `readelf -s <executable> ` to see the symbols of the program 
+
+Program is saved in non volatile storage.
+
+- big, slow, nonvolatile.
+
+Program is always executed  by the processor in RAM (Process).
+
+- fast, relatively small, volatile memory.
 
 
 
-# Process in Execution 
+# Process  
+
+A **Process** is a program in execution.
+
+For a program to be executed, it have to be transfered to the RAM for the processor to execute it.
 
 ## Virtual Memory 
 
 - when a process is started it looks in the memory like upcoming picture
 
-![image-20241224092503441](./assets/image-20241224092503441.png)
+![image-20250112085431932](./assets/image-20250112085431932.png)
 
-- `cat /dev/kallsyms` print all addresses of the kernel symbols, (on beaglebone note that they are all above 0xc0000000) 3GB (user) - 1GB (kernel) configuration for 32-bit device
+- `cat /dev/kallsyms` print all addresses of the kernel symbols, (on beaglebone note that they are all above 0xc0000000) 3GB (user) - 1GB (kernel) configuration for 32-bit device (**CONFIG_VM_SPILT_3G**)
 
 - each process while executing sees the whole 3GB as it's own memory (virtual memory)
 
-  ![image-20241224093438943](./assets/image-20241224093438943.png)
+- memory is divided into pages, virtual pages are mapped to physical memory through page table
+
+  ![image-20250112085509143](./assets/image-20250112085509143.png)
 
 - Pages are not in the physical memory until they are used
 
@@ -48,7 +61,7 @@ use `readelf` to see different parts of the elf
   - Allow Processes to share read only parts -> shared libraries
   - Allow Processes to share memory regions to share data, `shmget()`, `mmap()` 
   - You can exceed the physical RAM size with this concept.
-  - Allow different  process to have different  protections on the memory
+  - Allow different process to have different  protections on the memory
 
   
 
@@ -64,7 +77,7 @@ When the program is executed, the command-line arguments (the separate words par
 
 `cat /proc/<pid>/cmdline` gives you the command you issued to start the program, including cmdline args
 
-![image-20241224095830992](./assets/image-20241224095830992.png)
+![image-20250112090503215](./assets/image-20250112090503215.png)
 
 ```c
 #include <stdio.h>
@@ -78,20 +91,19 @@ exit(0);
 }
 ```
 
-args and envs is stored in the virtual address space of the process (look @ 0xc0000000)
+- arguments and environment variables is stored in the virtual address space of the process (look @ 0xc0000000)
+  - This can only be shown at runtime ?
 
-![image-20241224095715032](./assets/image-20241224095715032.png)
+### Environment Variables
 
-### Environment Varaibles
-
-Each process has an associated array of strings called the environment list, or simplythe environment. Each of these strings is a definition of the form **name=value**.
+Each process has an associated array of strings called the environment list, or simply the environment. Each of these strings is a definition of the form **name=value**.
 
 This List is copied from the parent process to the child process -> can be used to communicate some values to the child process
 
 you can access those environment variables from code, the environment list can be accessed using the global variable `char **environ`. (The C run-time startup code defines this variable and assigns the
 location of the environment list to it.)
 
-![image-20241224102242466](./assets/image-20241224102242466.png)
+![image-20250112092648472](./assets/image-20250112092648472.png)
 
 ```c
 extern char **environ;
@@ -116,13 +128,27 @@ For each process the kernel carry information about it, to use it later for sche
 
 You can see this information in `/proc/<pid>/` like:
 
-![image-20241224102932551](./assets/image-20241224102932551.png)
+![image-20250112094523772](./assets/image-20250112094523772.png)
 
-![image-20241224103023053](./assets/image-20241224103023053.png)
+
 
 and in 
 
-![image-20241224103116455](./assets/image-20241224103116455.png)
+|     Directory     |                   Description                   |
+| :---------------: | :---------------------------------------------: |
+| /proc/PID/cmdline |             Command line arguments.             |
+|   /proc/PID/cpu   | Current and last cpu in which it was executed.  |
+|   /proc/PID/cwd   |     Link to the current working directory.      |
+| /proc/PID/environ |        Values of environment variables.         |
+|   /proc/PID/exe   |     Link to the executable of this process.     |
+|   /proc/PID/fd    | Directory, which contains all file descriptors. |
+|  /proc/PID/maps   |  Memory maps to executables and library files.  |
+|   /proc/PID/mem   |          Memory held by this process.           |
+|  /proc/PID/root   |   Link to the root directory of this process.   |
+|  /proc/PID/stat   |                 Process status.                 |
+|  /proc/PID/statm  |       Process memory status information.        |
+| /proc/PID/status  |     Process status in human readable form.      |
+|  /proc/PID/task/  | contain subdirectory for each thread in process |
 
 ## Creating a Process
 

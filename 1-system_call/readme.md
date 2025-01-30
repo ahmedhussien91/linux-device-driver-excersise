@@ -1,10 +1,32 @@
-# Arm system call 
+# System call
 
-![image-20250106101625564](./assets/image-20250106101625564.png)
+see [kernel-laps](https://linux-kernel-labs.github.io/refs/heads/master/lectures/syscalls.html), 
 
+prepare and start the env qemu and debugger by following steps in [here](../prepareEnv/debugging_kernel.md), [Debug in linux using qemu] section
 
+## Introduction
 
-## Writing to a File Using System Calls in Linux (ARM Assembly)
+Kernel Offers a list of system calls that identifies the kernel interfaces. [linux system calls](https://man7.org/linux/man-pages/man2/syscalls.2.html)
+
+All system calls are implemented in the kernel.
+
+They are placed in a table and each system call have a specific number `__NR_<system call>`, Ex. see `linux/tools/include/uapi/asm-generic/unistd.h` 
+
+They are implemented in  function `sys_<system call>()`, note multiple versions for the system call can exist, Ex. in [man syscall.2](https://man7.org/linux/man-pages/man2/syscalls.2.html)
+
+```
+there are three different versions of stat(2):
+          sys_stat() (slot __NR_oldstat), sys_newstat() (slot
+          __NR_stat), and sys_stat64() (slot __NR_stat64), with the last
+          being the most current.  A similar story applies for lstat(2)
+          and fstat(2).
+```
+
+System calls is the main interface between the kernel and the applications
+
+![image-20250124080446155](./assets/image-20250124080446155.png)
+
+### Exercise (Writing to a File Using System Calls in Linux (ARM Assembly))
 
 To write to a file without using the C standard library (libc), you can use Linux system calls directly in ARM assembly. Below is an example demonstrating how to do this:
 
@@ -87,3 +109,7 @@ To build and execute the ARM assembly code on your target system, follow these s
     ```sh
     cat output.txt
     ```
+
+
+
+# Qemu tracing system call

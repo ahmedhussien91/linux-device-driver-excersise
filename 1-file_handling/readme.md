@@ -76,7 +76,7 @@ The following system calls are used for file operations such as reading and writ
        The file offset is set to the size of the file plus offset. In other words, offset is
        interpreted with respect to the next byte after the last byte of the file.
 
-     ![image-20241228073808611](./assets/image-20241228073808611.png)
+     ![image-20250112101017404](./assets/image-20250112101017404.png)
 
 6. **`int ioctl(int fd, int request, ... /* argp */)`** [man](https://man7.org/linux/man-pages/man2/ioctl.2.html)
 
