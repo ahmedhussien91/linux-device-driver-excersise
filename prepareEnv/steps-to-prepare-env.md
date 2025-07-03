@@ -28,13 +28,16 @@ sudo apt install libmpc-dev
   make menuconfig # Networking support -> Networking options -> 802.1Q/802.ad VLAN Support <M>
   # build linux 
   make
-  # for beaglebone 
-  #..
+  # for beaglebone use /home/ahmed/Documents/Linux_course/Linux-yocto-Excersises/linux/code [https://github.com/ahmedhussien91/Linux-yocto-Excersises]
+  # cd /home/ahmed/Documents/Linux_course/Linux-yocto-Excersises/linux/code/
+  # . setenv_crossCompiler.sh
+  # cd bb/linux # [./linux_build.sh]
   # make multi_v7_defconfig
   # make -j4 zImage
   # make -j4 dtbs
   # make modules
-  # make INSTALL_MOD_PATH=/srv/nfs4/nfsroot modules_install
+  # make INSTALL_MOD_PATH=/srv/nfs4/bb_busybox modules_install
+
   ```
 
 
