@@ -66,7 +66,7 @@ create `makefile`
 ifneq ($(KERNELRELEASE),)
 obj-m := $(PROGS)
 else
-KDIR ?= /opt/yocto/tmp/work/raspberrypi4-poky-linux-gnueabi/linux-raspberrypi/6.6.63+git/linux-raspberrypi4-standard-build
+KDIR ?= /opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git
 # Source files
 SRCS := $(wildcard *.c)
 # Module object files
