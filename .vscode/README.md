@@ -128,7 +128,7 @@ Configure launch.json for QEMU-based kernel debugging with GDB.
 ### Log-based Debugging
 Use `printk()` statements and monitor with:
 ```bash
-ssh root@192.168.1.100 "dmesg -w"
+ssh root@192.168.1.101"dmesg -w"
 ```
 
 ## 📚 Extensions Installed

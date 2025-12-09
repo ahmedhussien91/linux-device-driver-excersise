@@ -6,7 +6,7 @@
 
 set -e
 
-TARGET="root@192.168.1.100"  # Update with your RPi4 IP
+TARGET="root@192.168.1.101"  # Update with your RPi4 IP
 
 # Auto-detect module name if not provided
 if [ -n "$1" ] && [ "$1" != "-h" ] && [ "$1" != "--help" ]; then
