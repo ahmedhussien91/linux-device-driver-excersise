@@ -3,7 +3,7 @@
 ifneq ($(KERNELRELEASE),)
 obj-m := $(PROGS)
 else
-KDIR := /home/ahmed/Documents/Linux_course/Linux-yocto-Excersises/linux/code/bb/linux
+KDIR ?= /home/ahmed/Documents/Linux_course/Linux-yocto-Excersises/linux/code/bb/linux
 # Source files
 SRCS := $(wildcard *.c)
 # Module object files

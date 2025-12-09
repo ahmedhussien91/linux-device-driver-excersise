@@ -1,4 +1,4 @@
-# steps 
+# steps
 
 ### Install dep libraries
 
@@ -11,14 +11,14 @@ sudo apt install libmpc-dev
 
 ### Build linux
 
-- Download and Checkout new Linux version 
+- Download and Checkout new Linux version
 
   ```sh
   git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
   git checkout linux-6.7.y
   ```
 
-- Cross-compile Linux 
+- Cross-compile Linux
 
   ```sh
   export PATH=/home/dell/Desktop/Linux_course/precompiled-toolchain/arm-gnu-toolchain-13.3.rel1-x86_64-arm-none-linux-gnueabihf/bin:$PATH
@@ -26,7 +26,7 @@ sudo apt install libmpc-dev
   export ARCH=arm
   make vexpress_defconfig
   make menuconfig # Networking support -> Networking options -> 802.1Q/802.ad VLAN Support <M>
-  # build linux 
+  # build linux
   make
   # for beaglebone use /home/ahmed/Documents/Linux_course/Linux-yocto-Excersises/linux/code [https://github.com/ahmedhussien91/Linux-yocto-Excersises]
   # cd /home/ahmed/Documents/Linux_course/Linux-yocto-Excersises/linux/code/
@@ -55,15 +55,15 @@ sudo apt install libmpc-dev
     mkfs.ext4 rootfs.ext4
     # mount file to /mnt folder
     sudo mount rootfs.ext4 /mnt
-    # copy rootfilesystem downloaded files to /mnt  
+    # copy rootfilesystem downloaded files to /mnt
     sudo cp -a rootfs/* /mnt/
     # sudo umount /mnt
     ```
 
-- build and insert modules in files system 
+- build and insert modules in files system
 
   ```sh
-  # From Linux Source  
+  # From Linux Source
   # build Modules
   make modules
   # install modules in the rootFS
@@ -73,7 +73,7 @@ sudo apt install libmpc-dev
 ### Start Qemu
 
 
-- Start qemu 
+- Start qemu
 
   - ```sh
     sudo qemu-system-arm -M vexpress-a9 -m 128M -nographic \
@@ -86,7 +86,7 @@ sudo apt install libmpc-dev
 
 ### Building your first module
 
-create `hello.c` file 
+create `hello.c` file
 
 ```c
 // SPDX-License-Identifier: GPL-2.0
@@ -117,7 +117,7 @@ create `makefile`
 ifneq ($(KERNELRELEASE),)
 obj-m := $(PROGS)
 else
-KDIR := /home/dell/Desktop/Linux_course/Linux-yocto-Excersises/linux/code/bb/linux
+KDIR ?= /opt/yocto/tmp/work/raspberrypi4-poky-linux-gnueabi/linux-raspberrypi/6.6.63+git/linux-raspberrypi4-standard-build
 # Source files
 SRCS := $(wildcard *.c)
 # Module object files
@@ -137,11 +137,11 @@ print-vars:
 
 copy `hello.ko` to kernel root file system in `/mnt`
 
-```sh 
+```sh
 cp hello.ko /mnt/
 ```
 
-From qemu insert the module to run withing the Linux image 
+From qemu insert the module to run withing the Linux image
 
 ```sh
 insmod hello.ko

@@ -1,0 +1,110 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Kernel Module (Cross-compile for RPi4)",
+            "type": "shell",
+            "command": ". /opt/yocto/poky/5.0.8/environment-setup-cortexa72-poky-linux && export KDIR=\"/opt/yocto/tmp/work/raspberrypi4-poky-linux-gnueabi/linux-raspberrypi/6.6.63+git/linux-raspberrypi4-standard-build\" && make",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/3-developing_kernel_modules/code"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Build Local Kernel Module",
+            "type": "shell",
+            "command": "make",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/3-developing_kernel_modules/code"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Clean Kernel Module",
+            "type": "shell",
+            "command": "make clean",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/3-developing_kernel_modules/code"
+            }
+        },
+        {
+            "label": "Build File Handling Module (Cross-compile)",
+            "type": "shell",
+            "command": ". /opt/yocto/poky/5.0.8/environment-setup-cortexa72-poky-linux && export KDIR=\"/opt/yocto/tmp/work/raspberrypi4-poky-linux-gnueabi/linux-raspberrypi/6.6.63+git/linux-raspberrypi4-standard-build\" && make",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/1-file_handling/module"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Build Character Device Module (Cross-compile)",
+            "type": "shell",
+            "command": ". /opt/yocto/poky/5.0.8/environment-setup-cortexa72-poky-linux && export KDIR=\"/opt/yocto/tmp/work/raspberrypi4-poky-linux-gnueabi/linux-raspberrypi/6.6.63+git/linux-raspberrypi4-standard-build\" && make",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/5-devUserSpaceAccess"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Deploy and Test Module",
+            "type": "shell",
+            "command": "${workspaceFolder}/.vscode/deploy_and_test.sh",
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "dependsOn": "Build Kernel Module (Cross-compile for RPi4)"
+        }
+    ]
+}

@@ -3,7 +3,7 @@
 ifneq ($(KERNELRELEASE),)
 obj-m := $(PROGS)
 else
-KDIR := /home/ahmed/Documents/Linux_course/Linux-yocto-Excersises/linux/code/rpi4/linux/
+KDIR ?= /home/ahmed/Documents/Linux_course/Linux-yocto-Excersises/linux/code/rpi4/linux/
 # Source files
 SRCS := $(wildcard *.c)
 # Module object files
@@ -11,8 +11,7 @@ PROGS := $(SRCS:.c=.o)
 MODS := $(SRCS:.c=.ko)
 EXTRA_CFLAGS += -DDEBUG
 all:
-	$(MAKE) -C $(KDIR) M=$(PWD) PROGS="$(PROGS)" EXTRA_CFLAGS="$(EXTRA_CFLAGS)" modules 
-	sudo cp $(MODS) /srv/nfs4/bb_busybox/
+	$(MAKE) -C $(KDIR) M=$(PWD) PROGS="$(PROGS)" EXTRA_CFLAGS="$(EXTRA_CFLAGS)" modules
 endif
 
 clean:

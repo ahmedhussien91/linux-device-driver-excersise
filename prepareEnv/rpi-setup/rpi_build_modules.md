@@ -80,7 +80,7 @@ MODULE_DESCRIPTION("Simple test module built on PC for RPi4");
 obj-m := mymod.o
 
 # Point this to the Yocto kernel *build* directory
-KDIR ?= /path/to/yocto/build/tmp/work/raspberrypi4-poky-linux/linux-raspberrypi/<ver>/build
+KDIR ?= /opt/yocto/tmp/work/raspberrypi4-poky-linux-gnueabi/linux-raspberrypi/6.6.63+git/linux-raspberrypi4-standard-build/
 
 all:
 	$(MAKE) -C $(KDIR) M=$(PWD) modules
@@ -143,8 +143,8 @@ You basically want:
 
    Where:
 
-   - `KERNEL_SRC = tmp/work-shared/raspberrypi4/kernel-source`
-   - `KERNEL_BUILD = tmp/work/.../build`
+   - `KERNEL_SRC = /opt/yocto/ycoto-excersise/rpi-build-sysv/workspace/sources/linux-raspberrypi`
+   - `KERNEL_BUILD = /opt/yocto/tmp/work/raspberrypi4-poky-linux-gnueabi/linux-raspberrypi/6.6.63+git/linux-raspberrypi4-standard-build/`
 
    This gives you proper intellisense for kernel APIs.
 
@@ -159,7 +159,7 @@ You basically want:
        {
          "label": "Build mymod",
          "type": "shell",
-         "command": "source /opt/poky/.../environment-setup-aarch64-poky-linux && make",
+         "command": ". /opt/yocto/poky/5.0.8/environment-setup-cortexa72-poky-linux && export KDIR=\"/opt/yocto/tmp/work/raspberrypi4-poky-linux-gnueabi/linux-raspberrypi/6.6.63+git/linux-raspberrypi4-standard-build\" && make",
          "problemMatcher": "$gcc"
        }
      ]

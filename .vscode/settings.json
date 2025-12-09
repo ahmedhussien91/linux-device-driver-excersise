@@ -1,0 +1,79 @@
+{
+    "files.associations": {
+        "*.h": "c",
+        "*.c": "c",
+        "module.h": "c",
+        "kernel.h": "c",
+        "printk.h": "c",
+        "slab.h": "c",
+        "uaccess.h": "c",
+        "fs.h": "c",
+        "device.h": "c",
+        "cdev.h": "c",
+        "Kconfig": "kconfig",
+        "Makefile": "makefile",
+        "makefile": "makefile"
+    },
+    "C_Cpp.default.configurationProvider": "ms-vscode.cpptools",
+    "C_Cpp.default.intelliSenseMode": "linux-gcc-arm64",
+    "C_Cpp.errorSquiggles": "enabled",
+    "C_Cpp.default.browse.limitSymbolsToIncludedHeaders": false,
+    "C_Cpp.default.browse.databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db",
+    "C_Cpp.loggingLevel": "Information",
+    "editor.tabSize": 8,
+    "editor.insertSpaces": false,
+    "editor.detectIndentation": false,
+    "editor.rulers": [80, 100],
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "editor.renderWhitespace": "boundary",
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#ff4081"
+    },
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash",
+            "args": []
+        },
+        "Cross-compile Environment": {
+            "path": "bash",
+            "args": ["-c", "source /opt/yocto/poky/5.0.8/environment-setup-cortexa72-poky-linux && export KDIR=\"/opt/yocto/tmp/work/raspberrypi4-poky-linux-gnueabi/linux-raspberrypi/6.6.63+git/linux-raspberrypi4-standard-build\" && bash"]
+        }
+    },
+    "search.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true,
+        "**/*.ko": true,
+        "**/*.o": true,
+        "**/*.mod.c": true,
+        "**/*.mod": true,
+        "**/modules.order": true,
+        "**/Module.symvers": true,
+        "**/.tmp_versions": true
+    },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/**": true,
+        "**/*.ko": true,
+        "**/*.o": true,
+        "**/*.mod.c": true,
+        "**/.tmp_versions/**": true
+    },
+    "git.ignoreLimitWarning": true,
+    "editor.formatOnSave": false,
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, IndentWidth: 8, UseTab: Always, BreakBeforeBraces: Linux, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false }",
+    "clangd.arguments": [
+        "--background-index",
+        "--clang-tidy",
+        "--header-insertion=iwyu",
+        "--completion-style=detailed",
+        "--function-arg-placeholders=false"
+    ]
+}

@@ -11,7 +11,7 @@
 
 ## Create your first module
 
-create `hello.c` file 
+create `hello.c` file
 ```c
 // SPDX-License-Identifier: GPL-2.0
 /* hello.c */
@@ -42,7 +42,7 @@ MODULE_AUTHOR("William Shakespeare");
 
   - This `.init` is removed after loading the module.
 
-  - if module is compiled statically into kernel, it frees `.init` section, 
+  - if module is compiled statically into kernel, it frees `.init` section,
 
     - startup printk at the end of the linux startup
 
@@ -56,7 +56,7 @@ MODULE_AUTHOR("William Shakespeare");
 - `include/linux/init.h`![image-20250112073717600](./assets/image-20250112073717600.png)
 
 - `MODULE_LICENSE()`, `MODULE_DESCRIPTION()` and `MODULE_AUTHOR()`, declare meta data about the module
-  - try `modinfo` after loading the module 
+  - try `modinfo` after loading the module
 
 create `makefile`
 
@@ -66,7 +66,7 @@ create `makefile`
 ifneq ($(KERNELRELEASE),)
 obj-m := $(PROGS)
 else
-KDIR := /home/dell/Desktop/Linux_course/Linux-yocto-Excersises/linux/code/bb/linux
+KDIR ?= /opt/yocto/tmp/work/raspberrypi4-poky-linux-gnueabi/linux-raspberrypi/6.6.63+git/linux-raspberrypi4-standard-build
 # Source files
 SRCS := $(wildcard *.c)
 # Module object files
@@ -90,7 +90,7 @@ print-vars:
 
 Kernel logs can be logged to three different locations:
 1. In kernel memory log buffer (always)  -> `/dev/kmsg`
-2. non-volatile log files -> rsyslog & systemd `journalctl -k` 
+2. non-volatile log files -> rsyslog & systemd `journalctl -k`
 3. In console device
 
 configuration of printk of system lie in `/proc/sys/kernel/printk`
@@ -105,7 +105,7 @@ Those 4 numbers represents:
    the console device!
 2. The default level for messages that lack an explicit log level
 3. The minimum allowed log level
-4. The boot-time default log level 
+4. The boot-time default log level
 
 #### Logging from a kernel module
 
@@ -203,9 +203,9 @@ static int __init jiffies_example_init(void)
     printk(KERN_INFO "Jiffies: %lu\n", jiffies);
     printk(KERN_INFO "HZ: %d\n", HZ);
     printk(KERN_INFO "Seconds since boot: %lu\n", jiffies / HZ);
-        
+
     msleep(5000);
-    
+
     printk(KERN_INFO "Jiffies: %lu\n", jiffies);
     printk(KERN_INFO "HZ: %d\n", HZ);
     printk(KERN_INFO "Seconds since boot: %lu\n", jiffies / HZ);
@@ -227,8 +227,8 @@ MODULE_DESCRIPTION("Jiffies Example");
 
 Note:
 - To handle overflow, the kernel provides macros like `time_before()` and `time_after()`
-- `schedule_timeout()` used to do delays in the kernel, Ex A delay of 5 seconds would be represented as:  
-    
+- `schedule_timeout()` used to do delays in the kernel, Ex A delay of 5 seconds would be represented as:
+
     ```c
     unsigned long delay = 5 * HZ;
     schedule_timeout(delay);
@@ -236,11 +236,11 @@ Note:
 ###### printk_ratelimited()
 - it effectively suppresses regular prints when certain conditions are fulfilled.
 - two kernel runtime configuration parameters (sysctl) in the path `/proc/sys/kernel/`:
-    1. printk_ratelimit 
+    1. printk_ratelimit
     2. printk_ratelimit_burst
 - Ex. printk_ratelimit=5, printk_ratelimit_burst=10
     this means up to 10 instances of the same message occurring within a 5-second time interval can make it through before rate limiting kicks in.
-- check `kernel/printk/sysctl.c` -> see the configuration parameters for the `printk_sysctls` 
+- check `kernel/printk/sysctl.c` -> see the configuration parameters for the `printk_sysctls`
 
 #### linux loglevels & extra info
  - Try setting resetting the loglevel @ the start of the system by adding `loglevel=7` then `loglevel=1` in linux commandline and see the difference.
@@ -256,7 +256,7 @@ Note:
  #define pr_fmt(fmt) "%s:%s(): " fmt, KBUILD_MODNAME, __func__
  ```
 
-- This should reformat your printing to be as follows:  
+- This should reformat your printing to be as follows:
 
   - This is written in the code
 
@@ -264,19 +264,18 @@ Note:
     pr_info("Test log message\n");
     ```
 
-    
 
-  - It should expand to 
+
+  - It should expand to
 
     ```c
     printk(KERN_INFO "%s:%s(): Test log message\n", "my_module", "example_function");
     ```
 
-    
+
 
   - then should be printed
 
     ```
     my_module:example_function(): Test log message
     ```
-    
