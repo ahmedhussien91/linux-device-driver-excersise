@@ -143,7 +143,7 @@ You basically want:
 
    Where:
 
-   - `KERNEL_SRC = /opt/yocto/ycoto-excersise/rpi-build-sysv/workspace/sources/linux-raspberrypi`
+   - `KERNEL_SRC = /opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git`
    - `KERNEL_BUILD = /opt/yocto/tmp/work/raspberrypi4-poky-linux-gnueabi/linux-raspberrypi/6.6.63+git/linux-raspberrypi4-standard-build/`
 
    This gives you proper intellisense for kernel APIs.
@@ -175,9 +175,9 @@ You basically want:
    ```
    #!/usr/bin/env bash
    set -e
-   
+
    TARGET=root@192.168.x.x
-   
+
    scp mymod.ko $TARGET:/tmp/
    ssh $TARGET "rmmod mymod 2>/dev/null || true; insmod /tmp/mymod.ko; dmesg | tail -n 20"
    ```

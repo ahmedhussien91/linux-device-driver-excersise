@@ -1,13 +1,44 @@
 #!/usr/bin/env bash
 
 # Module Testing Helper Script
-# Usage: ./test_module.sh <module_name> [parameters]
+# Usage: ./test_module.sh [module_name] [parameters]
+# If no module name provided, attempts to auto-detect from current context
 
 set -e
 
 TARGET="root@192.168.1.100"  # Update with your RPi4 IP
-MODULE_NAME="${1:-hello}"
-PARAMS="${2:-}"
+
+# Auto-detect module name if not provided
+if [ -n "$1" ] && [ "$1" != "-h" ] && [ "$1" != "--help" ]; then
+    MODULE_NAME="$1"
+    PARAMS="${2:-}"
+else
+    # Auto-detection logic
+    if [ -n "$VSCODE_CWD" ] && [ -f "$VSCODE_CWD/Makefile" ]; then
+        MODULE_NAME=$(basename "$(find "$VSCODE_CWD" -name "*.c" -not -name "*.mod.c" | head -1)" .c 2>/dev/null || echo "")
+        MODULE_DIR="$VSCODE_CWD"
+    elif [ -f "Makefile" ]; then
+        MODULE_NAME=$(basename "$(find . -maxdepth 1 -name "*.c" -not -name "*.mod.c" | head -1)" .c 2>/dev/null || echo "")
+        MODULE_DIR="$(pwd)"
+    else
+        # Check common directories
+        for dir in "3-developing_kernel_modules/code" "1-file_handling/module" "5-devUserSpaceAccess"; do
+            if [ -d "$dir" ] && [ -n "$(find "$dir" -name "*.c" -not -name "*.mod.c" 2>/dev/null)" ]; then
+                MODULE_NAME=$(basename "$(find "$dir" -name "*.c" -not -name "*.mod.c" | head -1)" .c)
+                MODULE_DIR="$dir"
+                break
+            fi
+        done
+    fi
+    
+    # Default fallback
+    if [ -z "$MODULE_NAME" ]; then
+        MODULE_NAME="hello"
+        MODULE_DIR="3-developing_kernel_modules/code"
+    fi
+    
+    PARAMS="${1:-}"  # If first arg wasn't module name, treat it as parameters
+fi
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -29,14 +60,27 @@ run_remote() {
     ssh "$TARGET" "$1"
 }
 
+# Determine module directory if not set
+if [ -z "$MODULE_DIR" ]; then
+    # Search for the module in common directories
+    for dir in "3-developing_kernel_modules/code" "1-file_handling/module" "5-devUserSpaceAccess" "."; do
+        if [ -f "${dir}/${MODULE_NAME}.ko" ]; then
+            MODULE_DIR="$dir"
+            break
+        fi
+    done
+fi
+
 # Check if module file exists
-if [ ! -f "3-developing_kernel_modules/code/${MODULE_NAME}.ko" ]; then
-    echo -e "${RED}❌ Module file ${MODULE_NAME}.ko not found${NC}"
+if [ ! -f "${MODULE_DIR}/${MODULE_NAME}.ko" ]; then
+    echo -e "${RED}❌ Module file ${MODULE_NAME}.ko not found in ${MODULE_DIR}${NC}"
+    echo -e "${YELLOW}💡 Available .ko files:${NC}"
+    find . -name "*.ko" -type f 2>/dev/null || echo "No .ko files found"
     exit 1
 fi
 
 echo -e "${YELLOW}📦 Copying ${MODULE_NAME}.ko to target...${NC}"
-scp "3-developing_kernel_modules/code/${MODULE_NAME}.ko" "$TARGET:/tmp/"
+scp "${MODULE_DIR}/${MODULE_NAME}.ko" "$TARGET:/tmp/"
 
 echo -e "${YELLOW}🧹 Cleaning up previous module instances...${NC}"
 run_remote "rmmod ${MODULE_NAME} 2>/dev/null || true"
