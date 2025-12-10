@@ -3,11 +3,7 @@
         {
             "name": "Linux Kernel Cross-compile (RPi4)",
             "includePath": [
-                "${workspaceFolder}/**",
-		"/opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git/source/**",
-                "/opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git/source/include/**",
-                "/opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git/source/arch/arm64/include/**",
-		"/opt/yocto/poky/5.0.8/sysroots/**"
+                "${workspaceFolder}/**"
             ],
             "defines": [
                 "__KERNEL__",
@@ -22,14 +18,10 @@
             "cppStandard": "c++17",
             "intelliSenseMode": "linux-gcc-arm64",
             "browse": {
-                "limitSymbolsToIncludedHeaders": true,
+                "limitSymbolsToIncludedHeaders": false,
                 "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db",
                 "path": [
-                "${workspaceFolder}/**",
-		"/opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git/source/**",
-                "/opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git/source/include/**",
-                "/opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git/source/arch/arm64/include/**",
-		"/opt/yocto/poky/5.0.8/sysroots/**"
+                    "${workspaceFolder}/**"
                 ]
             },
             "compilerArgs": [

@@ -1,0 +1,52 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../../../../../opt/yocto/ycoto-excersise/rpi-build-sysv/workspace/sources/linux-raspberrypi"
+		},
+		{
+			"path": "../../../../../../../opt/yocto/poky/5.0.8/sysroots/cortexa72-poky-linux"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.h": "c",
+			"*.c": "c",
+			"module.h": "c",
+			"kernel.h": "c",
+			"printk.h": "c",
+			"slab.h": "c",
+			"uaccess.h": "c",
+			"fs.h": "c",
+			"device.h": "c",
+			"cdev.h": "c",
+			"Kconfig": "kconfig",
+			"Makefile": "makefile",
+			"makefile": "makefile"
+		},
+		"C_Cpp.workspaceSymbols": "All",
+		"C_Cpp.workspaceParsingPriority": "highest",
+		"C_Cpp.loggingLevel": "Debug",
+		"C_Cpp.enhancedColorization": "enabled",
+		"workbench.colorCustomizations": {
+			"editorRuler.foreground": "#ff4081"
+		},
+		"terminal.integrated.defaultProfile.linux": "bash",
+		"terminal.integrated.profiles.linux": {
+			"bash": {
+				"path": "bash",
+				"args": []
+			},
+			"Cross-compile Environment": {
+				"path": "bash",
+				"args": [
+					"-c",
+					"source /opt/yocto/poky/5.0.8/environment-setup-cortexa72-poky-linux && export KDIR=\"/opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git\" && bash"
+				]
+			}
+		},
+		"git.ignoreLimitWarning": true
+	}
+}
