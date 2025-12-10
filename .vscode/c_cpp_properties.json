@@ -3,7 +3,9 @@
         {
             "name": "Linux Kernel Cross-compile (RPi4)",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/opt/yocto/ycoto-excersise/rpi-build-sysv/workspace/sources/linux-raspberrypi/include",
+                "/opt/yocto/ycoto-excersise/rpi-build-sysv/workspace/sources/linux-raspberrypi/arch/arm64/include"
             ],
             "defines": [
                 "__KERNEL__",
@@ -21,14 +23,16 @@
                 "limitSymbolsToIncludedHeaders": false,
                 "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db",
                 "path": [
-                    "${workspaceFolder}/**"
+                    "${workspaceFolder}/**",
+                    "/opt/yocto/ycoto-excersise/rpi-build-sysv/workspace/sources/linux-raspberrypi/include/**",
+                    "/opt/yocto/ycoto-excersise/rpi-build-sysv/workspace/sources/linux-raspberrypi/arch/arm64/include/**"
                 ]
             },
             "compilerArgs": [
                 "-nostdinc",
-                "-isystem", "/opt/yocto/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/13.3.0/include",
-                "-include", "/opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git/include/linux/compiler-version.h",
-                "-include", "/opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git/include/linux/kconfig.h"
+                "-I${workspaceFolder}",
+                "-I/opt/yocto/ycoto-excersise/rpi-build-sysv/workspace/sources/linux-raspberrypi/include",
+                "-I/opt/yocto/ycoto-excersise/rpi-build-sysv/workspace/sources/linux-raspberrypi/arch/arm64/include"
             ]
         }
     ],

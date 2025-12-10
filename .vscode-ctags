@@ -1,0 +1,483 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/ahmed/Documents/Linux_course/linux_device_drivers/Excersise/linux-device-driver-excersise/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+$(CROSS_COMPILE)agent-proxy	prepareEnv/agent-proxy/Makefile	/^$(CROSS_COMPILE)agent-proxy: $(OBJS)$/;"	t
+$(extpath)$(CROSS_COMPILE)%.o	prepareEnv/agent-proxy/Makefile	/^$(extpath)$(CROSS_COMPILE)%.o::%.c$/;"	t
+$(extpath)%.obj	prepareEnv/agent-proxy/Makefile	/^$(extpath)%.obj:%.c$/;"	t
+%	0-LinuxProgrammingInterface/1-file_handling/makefile	/^%: %.c$/;"	t
+%	0-LinuxProgrammingInterface/1-system_call/makefile	/^%: %.s$/;"	t
+%.o	prepareEnv/agent-proxy/kdmx/Makefile	/^%.o: %.c$/;"	t
+AGENTPROXY	prepareEnv/agent-proxy/Makefile	/^AGENTPROXY = $(CROSS_COMPILE)agent-proxy$/;"	m
+AGENTVER	prepareEnv/agent-proxy/Makefile	/^AGENTVER=1.97$/;"	m
+ARCH	prepareEnv/agent-proxy/Makefile	/^ARCH := linux$/;"	m
+ARCH	prepareEnv/agent-proxy/Makefile	/^ARCH := solaris$/;"	m
+BUFMAX	prepareEnv/agent-proxy/kdmx/kdmx.c	/^#define BUFMAX	/;"	d	file:
+CC	prepareEnv/agent-proxy/Makefile	/^CC = $(CROSS_COMPILE)gcc$/;"	m
+CC	prepareEnv/agent-proxy/Makefile	/^CC = cl$/;"	m
+CC	prepareEnv/agent-proxy/kdmx/Makefile	/^CC := gcc$/;"	m
+CFLAGS	0-LinuxProgrammingInterface/1-file_handling/makefile	/^CFLAGS = -Wall -Wextra -O2$/;"	m
+CFLAGS	0-LinuxProgrammingInterface/1-system_call/makefile	/^CFLAGS = -Wall -Wextra -O2$/;"	m
+CFLAGS	prepareEnv/agent-proxy/Makefile	/^CFLAGS = -g -Wall -Wno-unused-parameter -D$(ARCH)$/;"	m
+CFLAGS	prepareEnv/agent-proxy/Makefile	/^CFLAGS = \/GZ \/Z7 \/MTd -DDEBUG -nologo$/;"	m
+CFLAGS	prepareEnv/agent-proxy/kdmx/Makefile	/^CFLAGS := -Wall -Wunreachable-code$/;"	m
+CIBAUD	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^#define CIBAUD /;"	d	file:
+CLOSESOCKET	prepareEnv/agent-proxy/agent-proxy.c	/^#define CLOSESOCKET(/;"	d	file:
+CLS_LOCAL_PORT	prepareEnv/agent-proxy/agent-proxy.c	/^#define CLS_LOCAL_PORT /;"	d	file:
+CLS_REMOTE_PORT	prepareEnv/agent-proxy/agent-proxy.c	/^#define CLS_REMOTE_PORT /;"	d	file:
+CLS_SCRIPT_CLIENT	prepareEnv/agent-proxy/agent-proxy.c	/^#define CLS_SCRIPT_CLIENT /;"	d	file:
+CLS_SCRIPT_PORT	prepareEnv/agent-proxy/agent-proxy.c	/^#define CLS_SCRIPT_PORT /;"	d	file:
+DEFAULT_SERIAL	prepareEnv/agent-proxy/kdmx/kdmx.c	/^#define DEFAULT_SERIAL /;"	d	file:
+DEVICE_NAME	0-LinuxProgrammingInterface/1-file_handling/module/ioctl_kmodule.c	/^#define DEVICE_NAME /;"	d	file:
+DEVICE_TYPE	0-LinuxProgrammingInterface/1-file_handling/ioctl_userApp.c	/^#define DEVICE_TYPE /;"	d	file:
+DEVICE_TYPE	0-LinuxProgrammingInterface/1-file_handling/module/ioctl_kmodule.c	/^#define DEVICE_TYPE /;"	d	file:
+DW_FLAG_BREAK	prepareEnv/agent-proxy/kdmx/kdmx.c	/^#define DW_FLAG_BREAK /;"	d	file:
+FNAME_C	3-developing_kernel_modules/lkm_template/Makefile	/^FNAME_C := lkm_template$/;"	m
+FNAME_C	3-developing_kernel_modules/min_sysinfo/Makefile	/^FNAME_C := min_sysinfo$/;"	m
+HAVE_TERMIOS	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^#define HAVE_TERMIOS$/;"	d	file:
+HAVE_TERMIOS	prepareEnv/agent-proxy/agent-proxy.h	/^#define HAVE_TERMIOS$/;"	d
+IAC	prepareEnv/agent-proxy/agent-proxy.h	/^#define IAC /;"	d
+INDENT	3-developing_kernel_modules/lkm_template/Makefile	/^INDENT := indent$/;"	m
+INDENT	3-developing_kernel_modules/min_sysinfo/Makefile	/^INDENT := indent$/;"	m
+IOCTL_RDWR	0-LinuxProgrammingInterface/1-file_handling/ioctl_userApp.c	/^#define IOCTL_RDWR /;"	d	file:
+IOCTL_RDWR	0-LinuxProgrammingInterface/1-file_handling/module/ioctl_kmodule.c	/^#define IOCTL_RDWR /;"	d	file:
+IOCTL_READ	0-LinuxProgrammingInterface/1-file_handling/ioctl_userApp.c	/^#define IOCTL_READ /;"	d	file:
+IOCTL_READ	0-LinuxProgrammingInterface/1-file_handling/module/ioctl_kmodule.c	/^#define IOCTL_READ /;"	d	file:
+IOCTL_WRITE	0-LinuxProgrammingInterface/1-file_handling/ioctl_userApp.c	/^#define IOCTL_WRITE /;"	d	file:
+IOCTL_WRITE	0-LinuxProgrammingInterface/1-file_handling/module/ioctl_kmodule.c	/^#define IOCTL_WRITE /;"	d	file:
+IO_BUFSIZE	prepareEnv/agent-proxy/agent-proxy.h	/^#define IO_BUFSIZE /;"	d
+KDIR	0-LinuxProgrammingInterface/1-file_handling/module/Makefile	/^KDIR ?= \/home\/dell\/Desktop\/Linux_course\/Linux-yocto-Excersises\/linux\/code\/bb\/linux$/;"	m
+KDIR	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/Makefile	/^KDIR ?= \/home\/dell\/Desktop\/Linux_course\/Linux-yocto-Excersises\/linux\/code\/bb\/linux$/;"	m
+KDIR	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/Makefile	/^KDIR ?= \/home\/dell\/Desktop\/Linux_course\/Linux-yocto-Excersises\/linux\/code\/bb\/linux$/;"	m
+KDIR	1-LinuxKernelConcepts/2-work_deferring/Makefile	/^KDIR ?= \/home\/dell\/Desktop\/Linux_course\/Linux-yocto-Excersises\/linux\/code\/bb\/linux$/;"	m
+KDIR	1-LinuxKernelConcepts/3-interrupt_mangement/Makefile	/^KDIR ?= \/home\/dell\/Desktop\/Linux_course\/Linux-yocto-Excersises\/linux\/code\/bb\/linux$/;"	m
+KDIR	1-LinuxKernelConcepts/Makefile	/^KDIR ?= \/home\/dell\/Desktop\/Linux_course\/Linux-yocto-Excersises\/linux\/code\/bb\/linux$/;"	m
+KDIR	3-developing_kernel_modules/code/Makefile	/^KDIR ?= \/home\/ahmed\/Documents\/Linux_course\/Linux-yocto-Excersises\/linux\/code\/rpi4\/linux/;"	m
+KDIR	3-developing_kernel_modules/lkm_template/Makefile	/^  KDIR ?= \/lib\/modules\/$(shell uname -r)\/build$/;"	m
+KDIR	3-developing_kernel_modules/lkm_template/Makefile	/^  KDIR ?= ~\/kernel\/linux-4.14$/;"	m
+KDIR	3-developing_kernel_modules/lkm_template/Makefile	/^  KDIR ?= ~\/kernel\/linux-4.9.1$/;"	m
+KDIR	3-developing_kernel_modules/lkm_template/Makefile	/^  KDIR ?= ~\/rpi_work\/kernel_rpi\/linux$/;"	m
+KDIR	3-developing_kernel_modules/min_sysinfo/Makefile	/^  KDIR ?= \/lib\/modules\/$(shell uname -r)\/build$/;"	m
+KDIR	3-developing_kernel_modules/min_sysinfo/Makefile	/^  KDIR ?= ~\/kernel\/linux-4.14$/;"	m
+KDIR	3-developing_kernel_modules/min_sysinfo/Makefile	/^  KDIR ?= ~\/kernel\/linux-4.9.1$/;"	m
+KDIR	3-developing_kernel_modules/min_sysinfo/Makefile	/^  KDIR ?= ~\/rpi_work\/kernel_rpi\/linux$/;"	m
+KDIR	5-devUserSpaceAccess/Makefile	/^KDIR ?= \/home\/ahmed\/Documents\/Linux_course\/Linux-yocto-Excersises\/linux\/code\/bb\/linux$/;"	m
+LDLIBS	prepareEnv/agent-proxy/Makefile	/^LDLIBS = -lnsl -lsocket$/;"	m
+LINKFLAGS	prepareEnv/agent-proxy/Makefile	/^LINKFLAGS = $/;"	m
+MAX_FIFO_BUF	prepareEnv/agent-proxy/agent-proxy.c	/^#define MAX_FIFO_BUF /;"	d	file:
+MAX_GDB_BUF	prepareEnv/agent-proxy/agent-proxy.c	/^#define MAX_GDB_BUF /;"	d	file:
+MODNAME	3-developing_kernel_modules/code/core.c	/^#define MODNAME /;"	d	file:
+MODNAME	3-developing_kernel_modules/code/user.c	/^#define MODNAME /;"	d	file:
+MODS	0-LinuxProgrammingInterface/1-file_handling/module/Makefile	/^MODS := $(SRCS:.c=.ko)$/;"	m
+MODS	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/Makefile	/^MODS := $(SRCS:.c=.ko)$/;"	m
+MODS	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/Makefile	/^MODS := $(SRCS:.c=.ko)$/;"	m
+MODS	1-LinuxKernelConcepts/2-work_deferring/Makefile	/^MODS := $(SRCS:.c=.ko)$/;"	m
+MODS	1-LinuxKernelConcepts/3-interrupt_mangement/Makefile	/^MODS := $(SRCS:.c=.ko)$/;"	m
+MODS	1-LinuxKernelConcepts/Makefile	/^MODS := $(SRCS:.c=.ko)$/;"	m
+MODS	3-developing_kernel_modules/code/Makefile	/^MODS := $(SRCS:.c=.ko)$/;"	m
+MODS	5-devUserSpaceAccess/Makefile	/^MODS := $(SRCS:.c=.ko)$/;"	m
+MSGLEN	3-developing_kernel_modules/code/core.c	/^#define MSGLEN /;"	d	file:
+MSGLEN	3-developing_kernel_modules/min_sysinfo/min_sysinfo.c	/^#define MSGLEN /;"	d	file:
+MYMODNAME	3-developing_kernel_modules/min_sysinfo/min_sysinfo.c	/^#define MYMODNAME /;"	d	file:
+MY_MAJOR	5-devUserSpaceAccess/my_device.c	/^#define MY_MAJOR /;"	d	file:
+MY_MAX_MINORS	5-devUserSpaceAccess/my_device.c	/^#define MY_MAX_MINORS /;"	d	file:
+NAMESIZE	prepareEnv/agent-proxy/agent-proxy.h	/^#define NAMESIZE /;"	d
+NO_TELNET_OPTION_NEGOTIATION	prepareEnv/agent-proxy/agent-proxy.c	/^#define NO_TELNET_OPTION_NEGOTIATION /;"	d	file:
+OBJS	prepareEnv/agent-proxy/Makefile	/^OBJS := $(patsubst %.o,$(CROSS_COMPILE)%.o,$(OBJS))$/;"	m
+OBJS	prepareEnv/agent-proxy/Makefile	/^OBJS := $(patsubst %.o,$(extpath)%.o,$(OBJS))$/;"	m
+OBJS	prepareEnv/agent-proxy/Makefile	/^OBJS = agent-proxy.o agent-proxy-rs232.o$/;"	m
+OBJS	prepareEnv/agent-proxy/Makefile	/^OBJS:=$(patsubst %.o,%.obj,$(OBJS))$/;"	m
+OSTYPE	prepareEnv/agent-proxy/Makefile	/^OSTYPE := linux$/;"	m
+OURMODNAME	3-developing_kernel_modules/lkm_template/lkm_template.c	/^#define OURMODNAME /;"	d	file:
+OUR_MODNAME	3-developing_kernel_modules/code/modparam.c	/^#define OUR_MODNAME /;"	d	file:
+PKG_NAME	3-developing_kernel_modules/lkm_template/Makefile	/^PKG_NAME := ${FNAME_C}$/;"	m
+PKG_NAME	3-developing_kernel_modules/min_sysinfo/Makefile	/^PKG_NAME := ${FNAME_C}$/;"	m
+PORT_FIFO_CON	prepareEnv/agent-proxy/agent-proxy.h	/^#define PORT_FIFO_CON /;"	d
+PORT_LISTEN	prepareEnv/agent-proxy/agent-proxy.h	/^#define PORT_LISTEN /;"	d
+PORT_RS232	prepareEnv/agent-proxy/agent-proxy.h	/^#define PORT_RS232 /;"	d
+PORT_TCP	prepareEnv/agent-proxy/agent-proxy.h	/^#define PORT_TCP /;"	d
+PORT_UDP	prepareEnv/agent-proxy/agent-proxy.h	/^#define PORT_UDP /;"	d
+PREV_IO_NONE	prepareEnv/agent-proxy/kdmx/kdmx.c	/^	PREV_IO_NONE,$/;"	e	enum:__anond55fdb010103	file:
+PREV_IO_READ	prepareEnv/agent-proxy/kdmx/kdmx.c	/^	PREV_IO_READ,$/;"	e	enum:__anond55fdb010103	file:
+PREV_IO_WRITE	prepareEnv/agent-proxy/kdmx/kdmx.c	/^	PREV_IO_WRITE$/;"	e	enum:__anond55fdb010103	file:
+PROGS	0-LinuxProgrammingInterface/1-file_handling/makefile	/^PROGS = $(SRCS:.c=)$/;"	m
+PROGS	0-LinuxProgrammingInterface/1-file_handling/module/Makefile	/^PROGS := $(SRCS:.c=.o)$/;"	m
+PROGS	0-LinuxProgrammingInterface/1-system_call/makefile	/^PROGS = $(SRCS:.s=)$/;"	m
+PROGS	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/Makefile	/^PROGS := $(SRCS:.c=.o)$/;"	m
+PROGS	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/Makefile	/^PROGS := $(SRCS:.c=.o)$/;"	m
+PROGS	1-LinuxKernelConcepts/2-work_deferring/Makefile	/^PROGS := $(SRCS:.c=.o)$/;"	m
+PROGS	1-LinuxKernelConcepts/3-interrupt_mangement/Makefile	/^PROGS := $(SRCS:.c=.o)$/;"	m
+PROGS	1-LinuxKernelConcepts/Makefile	/^PROGS := $(SRCS:.c=.o)$/;"	m
+PROGS	3-developing_kernel_modules/code/Makefile	/^PROGS := $(SRCS:.c=.o)$/;"	m
+PROGS	5-devUserSpaceAccess/Makefile	/^PROGS := $(SRCS:.c=.o)$/;"	m
+PWD	3-developing_kernel_modules/lkm_template/Makefile	/^PWD            := $(shell pwd)$/;"	m
+PWD	3-developing_kernel_modules/min_sysinfo/Makefile	/^PWD            := $(shell pwd)$/;"	m
+SCRIPT_READ	prepareEnv/agent-proxy/agent-proxy.c	/^#define SCRIPT_READ /;"	d	file:
+SCRIPT_WRITE	prepareEnv/agent-proxy/agent-proxy.c	/^#define SCRIPT_WRITE /;"	d	file:
+SPIN_SHARED_H	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_shared.h	/^#define SPIN_SHARED_H$/;"	d
+SRCS	0-LinuxProgrammingInterface/1-file_handling/makefile	/^SRCS = $(wildcard *.c)$/;"	m
+SRCS	0-LinuxProgrammingInterface/1-file_handling/module/Makefile	/^SRCS := $(wildcard *.c)$/;"	m
+SRCS	0-LinuxProgrammingInterface/1-system_call/makefile	/^SRCS = $(wildcard *.s)$/;"	m
+SRCS	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/Makefile	/^SRCS := $(wildcard *.c)$/;"	m
+SRCS	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/Makefile	/^SRCS := $(wildcard *.c)$/;"	m
+SRCS	1-LinuxKernelConcepts/2-work_deferring/Makefile	/^SRCS := $(wildcard *.c)$/;"	m
+SRCS	1-LinuxKernelConcepts/3-interrupt_mangement/Makefile	/^SRCS := $(wildcard *.c)$/;"	m
+SRCS	1-LinuxKernelConcepts/Makefile	/^SRCS := $(wildcard *.c)$/;"	m
+SRCS	3-developing_kernel_modules/code/Makefile	/^SRCS := $(wildcard *.c)$/;"	m
+SRCS	5-devUserSpaceAccess/Makefile	/^SRCS := $(wildcard *.c)$/;"	m
+SRCS	prepareEnv/agent-proxy/Makefile	/^SRCS = $(patsubst %.o,%.c,$(OBJS))$/;"	m
+STDINOUT	prepareEnv/agent-proxy/agent-proxy.h	/^#define STDINOUT /;"	d
+THE_ONE	3-developing_kernel_modules/code/core.c	/^#define THE_ONE /;"	d	file:
+THE_ONE	3-developing_kernel_modules/code/user.c	/^#define THE_ONE /;"	d	file:
+TLSPATH_INC	prepareEnv/agent-proxy/Makefile	/^TLSPATH_INC=-I T:\/rome_tls\/x86-win\/encap\/sdk0204\/include$/;"	m
+VUFX	prepareEnv/agent-proxy/kdmx/kdmx.c	/^#define VUFX /;"	d	file:
+_GNU_SOURCE	prepareEnv/agent-proxy/kdmx/kdmx.c	/^#define _GNU_SOURCE$/;"	d	file:
+__anon30acadb10108	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^static struct {$/;"	s	file:
+__anond55fdb010103	prepareEnv/agent-proxy/kdmx/kdmx.c	/^enum {$/;"	g	file:
+all	0-LinuxProgrammingInterface/1-file_handling/makefile	/^all: $(PROGS)$/;"	t
+all	0-LinuxProgrammingInterface/1-file_handling/module/Makefile	/^all:$/;"	t
+all	0-LinuxProgrammingInterface/1-system_call/makefile	/^all: $(PROGS)$/;"	t
+all	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/Makefile	/^all:$/;"	t
+all	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/Makefile	/^all:$/;"	t
+all	1-LinuxKernelConcepts/2-work_deferring/Makefile	/^all:$/;"	t
+all	1-LinuxKernelConcepts/3-interrupt_mangement/Makefile	/^all:$/;"	t
+all	1-LinuxKernelConcepts/Makefile	/^all:$/;"	t
+all	3-developing_kernel_modules/code/Makefile	/^all:$/;"	t
+all	3-developing_kernel_modules/lkm_template/Makefile	/^all:$/;"	t
+all	3-developing_kernel_modules/min_sysinfo/Makefile	/^all:$/;"	t
+all	5-devUserSpaceAccess/Makefile	/^all:$/;"	t
+all	prepareEnv/agent-proxy/Makefile	/^all: $(CROSS_COMPILE)agent-proxy$/;"	t
+baudtab	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^} baudtab[] = {$/;"	v	typeref:struct:__anon30acadb10108[]
+breakOnConnect	prepareEnv/agent-proxy/agent-proxy.c	/^static int breakOnConnect = 1;$/;"	v	typeref:typename:int	file:
+breakPort	prepareEnv/agent-proxy/agent-proxy.h	/^	int breakPort;		\/* Send an alternate break sequence in place of a$/;"	m	struct:port_st	typeref:typename:int
+breakStr	prepareEnv/agent-proxy/agent-proxy.c	/^char *breakStr;$/;"	v	typeref:typename:char *
+breakStrLen	prepareEnv/agent-proxy/agent-proxy.c	/^char breakStrLen = 0;$/;"	v	typeref:typename:char
+buf	prepareEnv/agent-proxy/agent-proxy.h	/^	char buf[IO_BUFSIZE];	\/* buffer for io operations *\/$/;"	m	struct:port_st	typeref:typename:char[]
+c_dev	0-LinuxProgrammingInterface/1-file_handling/module/ioctl_kmodule.c	/^static struct cdev c_dev;$/;"	v	typeref:struct:cdev	file:
+cdev	5-devUserSpaceAccess/my_device.c	/^    struct cdev cdev;$/;"	m	struct:my_device_data	typeref:struct:cdev	file:
+checkpatch	3-developing_kernel_modules/lkm_template/Makefile	/^checkpatch:$/;"	t
+checkpatch	3-developing_kernel_modules/min_sysinfo/Makefile	/^checkpatch:$/;"	t
+clean	0-LinuxProgrammingInterface/1-file_handling/makefile	/^clean:$/;"	t
+clean	0-LinuxProgrammingInterface/1-file_handling/module/Makefile	/^clean:$/;"	t
+clean	0-LinuxProgrammingInterface/1-system_call/makefile	/^clean:$/;"	t
+clean	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/Makefile	/^clean:$/;"	t
+clean	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/Makefile	/^clean:$/;"	t
+clean	1-LinuxKernelConcepts/2-work_deferring/Makefile	/^clean:$/;"	t
+clean	1-LinuxKernelConcepts/3-interrupt_mangement/Makefile	/^clean:$/;"	t
+clean	1-LinuxKernelConcepts/Makefile	/^clean:$/;"	t
+clean	3-developing_kernel_modules/code/Makefile	/^clean:$/;"	t
+clean	3-developing_kernel_modules/lkm_template/Makefile	/^clean:$/;"	t
+clean	3-developing_kernel_modules/min_sysinfo/Makefile	/^clean:$/;"	t
+clean	5-devUserSpaceAccess/Makefile	/^clean:$/;"	t
+clean	prepareEnv/agent-proxy/Makefile	/^clean:$/;"	t
+clean	prepareEnv/agent-proxy/kdmx/Makefile	/^clean:$/;"	t
+cleanup_module	5-devUserSpaceAccess/my_device.c	/^void cleanup_module(void)$/;"	f	typeref:typename:void
+clientNext	prepareEnv/agent-proxy/agent-proxy.h	/^	struct port_st *clientNext;$/;"	m	struct:port_st	typeref:struct:port_st *
+clients	prepareEnv/agent-proxy/agent-proxy.h	/^	struct port_st *clients;	\/* The series of clients connected to the$/;"	m	struct:port_st	typeref:struct:port_st *
+cls	prepareEnv/agent-proxy/agent-proxy.h	/^	int cls;		\/* define if it is the local port or not *\/$/;"	m	struct:port_st	typeref:typename:int
+code	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^	int code;$/;"	m	struct:__anon30acadb10108	typeref:typename:int	file:
+code-style	3-developing_kernel_modules/lkm_template/Makefile	/^code-style:$/;"	t
+code-style	3-developing_kernel_modules/min_sysinfo/Makefile	/^code-style:$/;"	t
+condition	1-LinuxKernelConcepts/udelay_ex.c	/^static int condition = 0;$/;"	v	typeref:typename:int	file:
+condition	1-LinuxKernelConcepts/wait_event_timeout_ex.c	/^static int condition = 0;$/;"	v	typeref:typename:int	file:
+control_freak	3-developing_kernel_modules/code/modparam.c	/^static int control_freak;$/;"	v	typeref:typename:int	file:
+core_lkm_exit	3-developing_kernel_modules/code/core.c	/^static void __exit core_lkm_exit(void)$/;"	f	typeref:typename:void __exit	file:
+core_lkm_init	3-developing_kernel_modules/code/core.c	/^static int __init core_lkm_init(void)$/;"	f	typeref:typename:int __init	file:
+counter_lock	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_kthreads_demo.c	/^static spinlock_t counter_lock;$/;"	v	typeref:typename:spinlock_t	file:
+cs_count	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_hrtimer_demo.c	/^static u64 cs_count;$/;"	v	typeref:typename:u64	file:
+cs_count	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_hrtimer_demo.c	/^static u64 cs_count;$/;"	v	typeref:typename:u64	file:
+cs_count	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_kthreads_demo.c	/^static u64 cs_count;$/;"	v	typeref:typename:u64	file:
+debug	prepareEnv/agent-proxy/agent-proxy.c	/^int debug = 0;$/;"	v	typeref:typename:int
+debug	prepareEnv/agent-proxy/agent-proxy.c	/^int debug = 1;$/;"	v	typeref:typename:int
+debug	prepareEnv/agent-proxy/kdmx/kdmx.c	/^int debug;$/;"	v	typeref:typename:int
+debug_opened	prepareEnv/agent-proxy/kdmx/kdmx.c	/^int debug_opened = 0;		\/* Has GDB opened up yet? *\/$/;"	v	typeref:typename:int
+defaultBrkStr	prepareEnv/agent-proxy/agent-proxy.c	/^char defaultBrkStr[2] = { 0xff, 0xf3 };$/;"	v	typeref:typename:char[2]
+defaultBrkStrLen	prepareEnv/agent-proxy/agent-proxy.c	/^char defaultBrkStrLen = 2;$/;"	v	typeref:typename:char
+dev_num	0-LinuxProgrammingInterface/1-file_handling/module/ioctl_kmodule.c	/^static dev_t dev_num;$/;"	v	typeref:typename:dev_t	file:
+device_ioctl	0-LinuxProgrammingInterface/1-file_handling/module/ioctl_kmodule.c	/^static long device_ioctl(struct file *file, unsigned int cmd, unsigned long arg) {$/;"	f	typeref:typename:long	file:
+device_open	0-LinuxProgrammingInterface/1-file_handling/module/ioctl_kmodule.c	/^static int device_open(struct inode *inode, struct file *file) {$/;"	f	typeref:typename:int	file:
+device_release	0-LinuxProgrammingInterface/1-file_handling/module/ioctl_kmodule.c	/^static int device_release(struct inode *inode, struct file *file) {$/;"	f	typeref:typename:int	file:
+devs	5-devUserSpaceAccess/my_device.c	/^struct my_device_data devs[MY_MAX_MINORS];$/;"	v	typeref:struct:my_device_data[]
+die	prepareEnv/agent-proxy/kdmx/kdmx.c	/^int die(const char *msg)$/;"	f	typeref:typename:int
+distclean	prepareEnv/agent-proxy/Makefile	/^distclean: clean$/;"	t
+distclean	prepareEnv/agent-proxy/kdmx/Makefile	/^distclean: clean$/;"	t
+do_read	prepareEnv/agent-proxy/kdmx/kdmx.c	/^char do_read(int fd, int *ret_errno)$/;"	f	typeref:typename:char
+do_write	prepareEnv/agent-proxy/kdmx/kdmx.c	/^void do_write(int fd, char *buf, size_t len, int dw_flag)$/;"	f	typeref:typename:void
+example_exit	0-LinuxProgrammingInterface/1-file_handling/module/ioctl_kmodule.c	/^static void __exit example_exit(void) {$/;"	f	typeref:typename:void __exit	file:
+example_init	0-LinuxProgrammingInterface/1-file_handling/module/ioctl_kmodule.c	/^static int __init example_init(void) {$/;"	f	typeref:typename:int __init	file:
+exp_int	3-developing_kernel_modules/code/core.c	/^int exp_int = 200;$/;"	v	typeref:typename:int
+fifo_buf	prepareEnv/agent-proxy/agent-proxy.c	/^char fifo_buf[MAX_FIFO_BUF];$/;"	v	typeref:typename:char[]
+fifo_con_fd	prepareEnv/agent-proxy/agent-proxy.c	/^static int fifo_con_fd = -1;$/;"	v	typeref:typename:int	file:
+fifo_con_file	prepareEnv/agent-proxy/agent-proxy.c	/^static char *fifo_con_file;$/;"	v	typeref:typename:char *	file:
+fifo_idx	prepareEnv/agent-proxy/agent-proxy.c	/^int fifo_idx = 0;$/;"	v	typeref:typename:int
+fops	0-LinuxProgrammingInterface/1-file_handling/module/ioctl_kmodule.c	/^static struct file_operations fops = {$/;"	v	typeref:struct:file_operations	file:
+gdbArr	prepareEnv/agent-proxy/agent-proxy.c	/^static char gdbArr[MAX_GDB_BUF];$/;"	v	typeref:typename:char[]	file:
+gdbGotDollar	prepareEnv/agent-proxy/agent-proxy.c	/^static int gdbGotDollar = 0;$/;"	v	typeref:typename:int	file:
+gdbPtr	prepareEnv/agent-proxy/agent-proxy.c	/^static int gdbPtr = 0;$/;"	v	typeref:typename:int	file:
+gdbSplit	prepareEnv/agent-proxy/agent-proxy.c	/^static int gdbSplit = 1;$/;"	v	typeref:typename:int	file:
+gdb_fd	prepareEnv/agent-proxy/kdmx/kdmx.c	/^int gdb_fd;		\/* gdb pty master *\/$/;"	v	typeref:typename:int
+get_pty	prepareEnv/agent-proxy/kdmx/kdmx.c	/^void get_pty(int *master)$/;"	f	typeref:typename:void
+get_skey	3-developing_kernel_modules/code/core.c	/^u32 get_skey(int p)$/;"	f	typeref:typename:u32
+get_tty_state	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^static int get_tty_state(unsigned int sock, struct hardwire_ttystate *state)$/;"	f	typeref:typename:int	file:
+gettimeofday	prepareEnv/agent-proxy/agent-proxy.c	/^static int gettimeofday(struct timeval *tv, struct timezone *tz)$/;"	f	typeref:typename:int	file:
+handle_gdb	prepareEnv/agent-proxy/kdmx/kdmx.c	/^handle_gdb(void)$/;"	f	typeref:typename:void
+handle_serial	prepareEnv/agent-proxy/kdmx/kdmx.c	/^handle_serial(void)$/;"	f	typeref:typename:void
+handle_term	prepareEnv/agent-proxy/kdmx/kdmx.c	/^handle_term(void)$/;"	f	typeref:typename:void
+hardwire_ttystate	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^struct hardwire_ttystate {$/;"	s	file:
+hello_exit	3-developing_kernel_modules/code/hello.c	/^static void __exit hello_exit(void)$/;"	f	typeref:typename:void __exit	file:
+hello_init	3-developing_kernel_modules/code/hello.c	/^static int __init hello_init(void)$/;"	f	typeref:typename:int __init	file:
+help	3-developing_kernel_modules/lkm_template/Makefile	/^help:$/;"	t
+help	3-developing_kernel_modules/min_sysinfo/Makefile	/^help:$/;"	t
+hex	prepareEnv/agent-proxy/kdmx/kdmx.c	/^int hex(unsigned char ch)$/;"	f	typeref:typename:int
+iacStartup	prepareEnv/agent-proxy/agent-proxy.c	/^static void iacStartup(struct port_st *iport)$/;"	f	typeref:typename:void	file:
+inIAC	prepareEnv/agent-proxy/agent-proxy.h	/^	int inIAC;		\/* Processing an IAC sequence *\/$/;"	m	struct:port_st	typeref:typename:int
+indent	3-developing_kernel_modules/lkm_template/Makefile	/^indent:$/;"	t
+indent	3-developing_kernel_modules/min_sysinfo/Makefile	/^indent:$/;"	t
+init_module	5-devUserSpaceAccess/my_device.c	/^int init_module(void)$/;"	f	typeref:typename:int
+install	3-developing_kernel_modules/lkm_template/Makefile	/^install:$/;"	t
+install	3-developing_kernel_modules/min_sysinfo/Makefile	/^install:$/;"	t
+interval_ns	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_hrtimer_demo.c	/^static unsigned long interval_ns = 20 * 1000 * 1000; \/* 20 ms default *\/$/;"	v	typeref:typename:unsigned long	file:
+interval_ns	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_hrtimer_demo.c	/^static unsigned long interval_ns = 20 * 1000 * 1000; \/* 20 ms default *\/$/;"	v	typeref:typename:unsigned long	file:
+isLocal	prepareEnv/agent-proxy/agent-proxy.h	/^	int isLocal;		\/* Is this the local side or the remote side? *\/$/;"	m	struct:port_st	typeref:typename:int
+jiffies_example_exit	1-LinuxKernelConcepts/jiffies_example.c	/^static void __exit jiffies_example_exit(void)$/;"	f	typeref:typename:void __exit	file:
+jiffies_example_exit	3-developing_kernel_modules/code/jiffies_example.c	/^static void __exit jiffies_example_exit(void)$/;"	f	typeref:typename:void __exit	file:
+jiffies_example_init	1-LinuxKernelConcepts/jiffies_example.c	/^static int __init jiffies_example_init(void)$/;"	f	typeref:typename:int __init	file:
+jiffies_example_init	3-developing_kernel_modules/code/jiffies_example.c	/^static int __init jiffies_example_init(void)$/;"	f	typeref:typename:int __init	file:
+kdmx	prepareEnv/agent-proxy/kdmx/Makefile	/^kdmx: kdmx.o$/;"	t
+killScriptClient	prepareEnv/agent-proxy/agent-proxy.c	/^static void killScriptClient(struct port_st *s_port, struct port_st **iport,$/;"	f	typeref:typename:void	file:
+killport	prepareEnv/agent-proxy/agent-proxy.c	/^static void killport(struct port_st *port)$/;"	f	typeref:typename:void	file:
+kthread_counter	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_shared.h	/^	u64 kthread_counter;$/;"	m	struct:spin_demo_shared	typeref:typename:u64
+l_ports	prepareEnv/agent-proxy/agent-proxy.c	/^static struct port_st *l_ports;$/;"	v	typeref:struct:port_st *	file:
+listen_fd	prepareEnv/agent-proxy/agent-proxy.c	/^static int listen_fd = -1;$/;"	v	typeref:typename:int	file:
+lkm_template_exit	3-developing_kernel_modules/lkm_template/lkm_template.c	/^static void __exit lkm_template_exit(void)$/;"	f	typeref:typename:void __exit	file:
+lkm_template_init	3-developing_kernel_modules/lkm_template/lkm_template.c	/^static int __init lkm_template_init(void)$/;"	f	typeref:typename:int __init	file:
+llkd_sysinfo	3-developing_kernel_modules/min_sysinfo/min_sysinfo.c	/^void llkd_sysinfo(void)$/;"	f	typeref:typename:void
+llkd_sysinfo2	3-developing_kernel_modules/code/core.c	/^void llkd_sysinfo2(void)$/;"	f	typeref:typename:void
+llkd_sysinfo2	3-developing_kernel_modules/min_sysinfo/min_sysinfo.c	/^void llkd_sysinfo2(void)$/;"	f	typeref:typename:void
+lmode	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^	int lmode;$/;"	m	struct:hardwire_ttystate	typeref:typename:int	file:
+lmode	prepareEnv/agent-proxy/agent-proxy.h	/^	int lmode;		\/* Mode of a local port *\/$/;"	m	struct:port_st	typeref:typename:int
+localPortReadMessage	prepareEnv/agent-proxy/agent-proxy.c	/^static int localPortReadMessage(struct port_st *l_port)$/;"	f	typeref:typename:int	file:
+lock	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_shared.h	/^	spinlock_t lock;$/;"	m	struct:spin_demo_shared	typeref:typename:spinlock_t
+lock_failures	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_kthreads_demo.c	/^static u64 lock_failures;  \/* trylock failures *\/$/;"	v	typeref:typename:u64	file:
+lock_failures	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_kthreads_demo.c	/^static u64 lock_failures;$/;"	v	typeref:typename:u64	file:
+logchar	prepareEnv/agent-proxy/agent-proxy.c	/^int logchar = 0;$/;"	v	typeref:typename:int
+loops_per_thread	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_kthreads_demo.c	/^static unsigned int loops_per_thread = 100000;$/;"	v	typeref:typename:unsigned int	file:
+loops_per_thread	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_kthreads_demo.c	/^static unsigned int loops_per_thread = 100000;$/;"	v	typeref:typename:unsigned int	file:
+lscript	prepareEnv/agent-proxy/agent-proxy.h	/^	struct port_st *lscript;	\/* The local side of a script connection *\/$/;"	m	struct:port_st	typeref:struct:port_st *
+ltc	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^	struct ltchars ltc;$/;"	m	struct:hardwire_ttystate	typeref:struct:ltchars	file:
+main	0-LinuxProgrammingInterface/1-file_handling/io_syscalls.c	/^int main(int argc, char *argv[]) {$/;"	f	typeref:typename:int
+main	0-LinuxProgrammingInterface/1-file_handling/io_syscalls_getopt.c	/^int main(int argc, char *argv[]) {$/;"	f	typeref:typename:int
+main	0-LinuxProgrammingInterface/1-file_handling/ioctl_userApp.c	/^int main() {$/;"	f	typeref:typename:int
+main	0-LinuxProgrammingInterface/1-file_handling/readv_writev.c	/^int main(int argc, char *argv[]) {$/;"	f	typeref:typename:int
+main	1-LinuxKernelConcepts/printEnv.c	/^int main(int argc, char *argv[])$/;"	f	typeref:typename:int
+main	1-LinuxKernelConcepts/readAndPrintArguments.c	/^int main(int argc, char *argv[])$/;"	f	typeref:typename:int
+main	prepareEnv/agent-proxy/agent-proxy.c	/^int main(int argc, char *argv[])$/;"	f	typeref:typename:int
+main	prepareEnv/agent-proxy/kdmx/kdmx.c	/^main(int argc, char **argv)$/;"	f	typeref:typename:int
+master_rds	prepareEnv/agent-proxy/agent-proxy.c	/^fd_set master_rds;$/;"	v	typeref:typename:fd_set
+master_wds	prepareEnv/agent-proxy/agent-proxy.c	/^static fd_set master_wds;$/;"	v	typeref:typename:fd_set	file:
+max_cs_ns	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_hrtimer_demo.c	/^static u64 max_cs_ns;$/;"	v	typeref:typename:u64	file:
+max_cs_ns	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_kthreads_demo.c	/^static u64 max_cs_ns;      \/* max critical section duration observed *\/$/;"	v	typeref:typename:u64	file:
+max_cs_ns	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_hrtimer_demo.c	/^static u64 max_cs_ns;$/;"	v	typeref:typename:u64	file:
+max_cs_ns	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_kthreads_demo.c	/^static u64 max_cs_ns;$/;"	v	typeref:typename:u64	file:
+min_sysinfo_exit	3-developing_kernel_modules/min_sysinfo/min_sysinfo.c	/^static void __exit min_sysinfo_exit(void)$/;"	f	typeref:typename:void __exit	file:
+min_sysinfo_init	3-developing_kernel_modules/min_sysinfo/min_sysinfo.c	/^static int __init min_sysinfo_init(void)$/;"	f	typeref:typename:int __init	file:
+mode	prepareEnv/agent-proxy/agent-proxy.h	/^	int mode;		\/* Mode of operation of a script port *\/$/;"	m	struct:port_st	typeref:typename:int
+modparams2_exit	3-developing_kernel_modules/code/modparam.c	/^static void __exit modparams2_exit(void)$/;"	f	typeref:typename:void __exit	file:
+modparams2_init	3-developing_kernel_modules/code/modparam.c	/^static int __init modparams2_init(void)$/;"	f	typeref:typename:int __init	file:
+mp_debug_level	3-developing_kernel_modules/code/modparam.c	/^static int mp_debug_level;$/;"	v	typeref:typename:int	file:
+mp_strparam	3-developing_kernel_modules/code/modparam.c	/^static char *mp_strparam = "My string param";$/;"	v	typeref:typename:char *	file:
+my_data	0-LinuxProgrammingInterface/1-file_handling/ioctl_userApp.c	/^struct my_data {$/;"	s	file:
+my_data	0-LinuxProgrammingInterface/1-file_handling/module/ioctl_kmodule.c	/^struct my_data {$/;"	s	file:
+my_device_data	5-devUserSpaceAccess/my_device.c	/^struct my_device_data {$/;"	s	file:
+my_fops	5-devUserSpaceAccess/my_device.c	/^const struct file_operations my_fops = {$/;"	v	typeref:typename:const struct file_operations
+my_ioctl	5-devUserSpaceAccess/my_device.c	/^static long my_ioctl(struct file *file, unsigned int cmd, unsigned long arg)$/;"	f	typeref:typename:long	file:
+my_module_exit	1-LinuxKernelConcepts/kthreads_ex.c	/^static void __exit my_module_exit(void) {$/;"	f	typeref:typename:void __exit	file:
+my_module_init	1-LinuxKernelConcepts/kthreads_ex.c	/^static int __init my_module_init(void) {$/;"	f	typeref:typename:int __init	file:
+my_open	5-devUserSpaceAccess/my_device.c	/^static int my_open(struct inode *inode, struct file *file)$/;"	f	typeref:typename:int	file:
+my_read	5-devUserSpaceAccess/my_device.c	/^static int my_read(struct file *file, char __user *user_buffer, size_t size, loff_t *offset)$/;"	f	typeref:typename:int	file:
+my_release	5-devUserSpaceAccess/my_device.c	/^static int my_release(struct inode *inode, struct file *file)$/;"	f	typeref:typename:int	file:
+my_timer	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_hrtimer_demo.c	/^static struct hrtimer my_timer;$/;"	v	typeref:struct:hrtimer	file:
+my_timer	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_hrtimer_demo.c	/^static struct hrtimer my_timer;$/;"	v	typeref:struct:hrtimer	file:
+my_timer	1-LinuxKernelConcepts/timer_example.c	/^static struct timer_list my_timer;$/;"	v	typeref:struct:timer_list	file:
+my_timer_callback	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_hrtimer_demo.c	/^static enum hrtimer_restart my_timer_callback(struct hrtimer *t)$/;"	f	typeref:enum:hrtimer_restart	file:
+my_timer_callback	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_hrtimer_demo.c	/^static enum hrtimer_restart my_timer_callback(struct hrtimer *t)$/;"	f	typeref:enum:hrtimer_restart	file:
+my_write	5-devUserSpaceAccess/my_device.c	/^static ssize_t my_write(struct file *file, const char __user *user_buffer, size_t size, loff_t */;"	f	typeref:typename:ssize_t	file:
+name	prepareEnv/agent-proxy/agent-proxy.h	/^	char name[NAMESIZE];$/;"	m	struct:port_st	typeref:typename:char[]
+new_baudrate	prepareEnv/agent-proxy/kdmx/kdmx.c	/^speed_t new_baudrate = B9600;	\/* see \/usr\/include\/bits\/termios.h *\/$/;"	v	typeref:typename:speed_t
+next	prepareEnv/agent-proxy/agent-proxy.h	/^	struct port_st *next;$/;"	m	struct:port_st	typeref:struct:port_st *
+nsockhandle	prepareEnv/agent-proxy/agent-proxy.c	/^static int nsockhandle;$/;"	v	typeref:typename:int	file:
+obj-m	0-LinuxProgrammingInterface/1-file_handling/module/Makefile	/^obj-m := $(PROGS)$/;"	m
+obj-m	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/Makefile	/^obj-m := $(PROGS)$/;"	m
+obj-m	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/Makefile	/^obj-m := $(PROGS)$/;"	m
+obj-m	1-LinuxKernelConcepts/2-work_deferring/Makefile	/^obj-m := $(PROGS)$/;"	m
+obj-m	1-LinuxKernelConcepts/3-interrupt_mangement/Makefile	/^obj-m := $(PROGS)$/;"	m
+obj-m	1-LinuxKernelConcepts/Makefile	/^obj-m := $(PROGS)$/;"	m
+obj-m	3-developing_kernel_modules/code/Makefile	/^obj-m := $(PROGS)$/;"	m
+obj-m	5-devUserSpaceAccess/Makefile	/^obj-m := $(PROGS)$/;"	m
+open_remote_port	prepareEnv/agent-proxy/agent-proxy.c	/^static struct port_st *open_remote_port(struct port_st *peer)$/;"	f	typeref:struct:port_st *	file:
+parse_baud	prepareEnv/agent-proxy/kdmx/kdmx.c	/^void parse_baud(char *rate)$/;"	f	typeref:typename:void
+parse_debug	prepareEnv/agent-proxy/kdmx/kdmx.c	/^void parse_debug(char *options)$/;"	f	typeref:typename:void
+parse_local_port	prepareEnv/agent-proxy/agent-proxy.c	/^static int parse_local_port(struct port_st *lport, char *portStr)$/;"	f	typeref:typename:int	file:
+passthru_null_from_term	prepareEnv/agent-proxy/kdmx/kdmx.c	/^int passthru_null_from_term;$/;"	v	typeref:typename:int
+peer	prepareEnv/agent-proxy/agent-proxy.h	/^	struct port_st *peer;	\/* direct read and write local to remote *\/$/;"	m	struct:port_st	typeref:struct:port_st *
+period	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_hrtimer_demo.c	/^static ktime_t period;$/;"	v	typeref:typename:ktime_t	file:
+period	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_hrtimer_demo.c	/^static ktime_t period;$/;"	v	typeref:typename:ktime_t	file:
+port	prepareEnv/agent-proxy/agent-proxy.h	/^	int port;		\/* Port number of udp or tcp connection *\/$/;"	m	struct:port_st	typeref:typename:int
+port_st	prepareEnv/agent-proxy/agent-proxy.h	/^struct port_st {$/;"	s
+portclose	prepareEnv/agent-proxy/agent-proxy.h	/^	void (*portclose) (struct port_st *);$/;"	m	struct:port_st	typeref:typename:void (*)(struct port_st *)
+portread	prepareEnv/agent-proxy/agent-proxy.h	/^	int (*portread) (struct port_st *, char *, int, int);$/;"	m	struct:port_st	typeref:typename:int (*)(struct port_st *,char *,int,int)
+portwrite	prepareEnv/agent-proxy/agent-proxy.h	/^	int (*portwrite) (struct port_st *, char *, int, int);$/;"	m	struct:port_st	typeref:typename:int (*)(struct port_st *,char *,int,int)
+pr_debug	prepareEnv/agent-proxy/kdmx/kdmx.c	/^#define pr_debug(/;"	d	file:
+pr_err	prepareEnv/agent-proxy/kdmx/kdmx.c	/^#define pr_err(/;"	d	file:
+pr_fmt	3-developing_kernel_modules/code/core.c	/^#define pr_fmt(/;"	d	file:
+pr_fmt	3-developing_kernel_modules/code/jiffies_example.c	/^#define pr_fmt(/;"	d	file:
+pr_fmt	3-developing_kernel_modules/code/user.c	/^#define pr_fmt(/;"	d	file:
+pr_fmt	3-developing_kernel_modules/lkm_template/lkm_template.c	/^#define pr_fmt(/;"	d	file:
+pr_info	prepareEnv/agent-proxy/kdmx/kdmx.c	/^#define pr_info(/;"	d	file:
+pr_stat_gdb	prepareEnv/agent-proxy/kdmx/kdmx.c	/^#define pr_stat_gdb(/;"	d	file:
+pr_stat_trm	prepareEnv/agent-proxy/kdmx/kdmx.c	/^#define pr_stat_trm(/;"	d	file:
+prev_fd	prepareEnv/agent-proxy/kdmx/kdmx.c	/^int prev_fd = -1;$/;"	v	typeref:typename:int
+prev_io	prepareEnv/agent-proxy/kdmx/kdmx.c	/^} prev_io = PREV_IO_NONE;$/;"	v	typeref:enum:__anond55fdb010103
+print-vars	0-LinuxProgrammingInterface/1-file_handling/module/Makefile	/^print-vars:$/;"	t
+print-vars	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/Makefile	/^print-vars:$/;"	t
+print-vars	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/Makefile	/^print-vars:$/;"	t
+print-vars	1-LinuxKernelConcepts/2-work_deferring/Makefile	/^print-vars:$/;"	t
+print-vars	1-LinuxKernelConcepts/3-interrupt_mangement/Makefile	/^print-vars:$/;"	t
+print-vars	1-LinuxKernelConcepts/Makefile	/^print-vars:$/;"	t
+print-vars	3-developing_kernel_modules/code/Makefile	/^print-vars:$/;"	t
+print-vars	5-devUserSpaceAccess/Makefile	/^print-vars:$/;"	t
+print_G	prepareEnv/agent-proxy/kdmx/kdmx.c	/^int print_G;$/;"	v	typeref:typename:int
+print_S	prepareEnv/agent-proxy/kdmx/kdmx.c	/^int print_S;$/;"	v	typeref:typename:int
+print_T	prepareEnv/agent-proxy/kdmx/kdmx.c	/^int print_T;$/;"	v	typeref:typename:int
+print_g	prepareEnv/agent-proxy/kdmx/kdmx.c	/^int print_g;$/;"	v	typeref:typename:int
+print_label	prepareEnv/agent-proxy/kdmx/kdmx.c	/^int print_label;$/;"	v	typeref:typename:int
+print_s	prepareEnv/agent-proxy/kdmx/kdmx.c	/^int print_s;$/;"	v	typeref:typename:int
+print_t	prepareEnv/agent-proxy/kdmx/kdmx.c	/^int print_t;$/;"	v	typeref:typename:int
+print_time_and_jiffies	1-LinuxKernelConcepts/timer_example.c	/^void print_time_and_jiffies(struct timer_list *t)$/;"	f	typeref:typename:void
+print_usage	0-LinuxProgrammingInterface/1-file_handling/io_syscalls.c	/^void print_usage(const char *prog_name) {$/;"	f	typeref:typename:void
+print_usage	0-LinuxProgrammingInterface/1-file_handling/io_syscalls_getopt.c	/^void print_usage(const char *prog_name) {$/;"	f	typeref:typename:void
+printk_loglvl_exit	3-developing_kernel_modules/code/printk_loglvl.c	/^static void __exit printk_loglvl_exit(void)$/;"	f	typeref:typename:void __exit	file:
+printk_loglvl_init	3-developing_kernel_modules/code/printk_loglvl.c	/^static int __init printk_loglvl_init(void)$/;"	f	typeref:typename:int __init	file:
+processIACoptions	prepareEnv/agent-proxy/agent-proxy.c	/^static int processIACoptions(struct port_st *iport, int got)$/;"	f	typeref:typename:int	file:
+progname	prepareEnv/agent-proxy/agent-proxy.c	/^static char *progname;$/;"	v	typeref:typename:char *	file:
+r_ports	prepareEnv/agent-proxy/agent-proxy.c	/^static struct port_st *r_ports;$/;"	v	typeref:struct:port_st *	file:
+rate	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^	int rate;$/;"	m	struct:__anon30acadb10108	typeref:typename:int	file:
+rate_to_code	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^static int rate_to_code(int rate)$/;"	f	typeref:typename:int	file:
+readMessage	prepareEnv/agent-proxy/agent-proxy.h	/^	int (*readMessage) (struct port_st *);$/;"	m	struct:port_st	typeref:typename:int (*)(struct port_st *)
+refresh_nsockhandle	prepareEnv/agent-proxy/agent-proxy.c	/^static void refresh_nsockhandle()$/;"	f	typeref:typename:void	file:
+remote	prepareEnv/agent-proxy/agent-proxy.h	/^	struct port_st *remote;	\/* The remote clone to attach to attach a local to *\/$/;"	m	struct:port_st	typeref:struct:port_st *
+remotePortAccept	prepareEnv/agent-proxy/agent-proxy.c	/^static int remotePortAccept(struct port_st *iport)$/;"	f	typeref:typename:int	file:
+remotePortFifoConRead	prepareEnv/agent-proxy/agent-proxy.c	/^static int remotePortFifoConRead(struct port_st *iport)$/;"	f	typeref:typename:int	file:
+remotePortReadMessage	prepareEnv/agent-proxy/agent-proxy.c	/^static int remotePortReadMessage(struct port_st *iport)$/;"	f	typeref:typename:int	file:
+reset_term	prepareEnv/agent-proxy/kdmx/kdmx.c	/^reset_term(int ret_errno)$/;"	f	typeref:typename:void
+response_pending	prepareEnv/agent-proxy/kdmx/kdmx.c	/^int response_pending = 0;	\/* waiting for an ACK \/ NAK ? *\/$/;"	v	typeref:typename:int
+rmode	prepareEnv/agent-proxy/agent-proxy.h	/^	int rmode;		\/* Mode of a remote port *\/$/;"	m	struct:port_st	typeref:typename:int
+rports	prepareEnv/agent-proxy/agent-proxy.c	/^static struct port_st *rports = NULL;$/;"	v	typeref:struct:port_st *	file:
+rs232_portclose	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^void rs232_portclose(struct port_st *port)$/;"	f	typeref:typename:void
+rs232_portread	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^int rs232_portread(struct port_st *port, char *buf, int size, int opts)$/;"	f	typeref:typename:int
+rs232_portwrite	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^int rs232_portwrite(struct port_st *port, char *buf, int size, int opts)$/;"	f	typeref:typename:int
+rscript	prepareEnv/agent-proxy/agent-proxy.h	/^	struct port_st *rscript;	\/* The remote side of a script connection *\/$/;"	m	struct:port_st	typeref:struct:port_st *
+sa	3-developing_kernel_modules/lkm_template/Makefile	/^sa:$/;"	t
+sa	3-developing_kernel_modules/min_sysinfo/Makefile	/^sa:$/;"	t
+sa_cppcheck	3-developing_kernel_modules/lkm_template/Makefile	/^sa_cppcheck:$/;"	t
+sa_cppcheck	3-developing_kernel_modules/min_sysinfo/Makefile	/^sa_cppcheck:$/;"	t
+sa_flawfinder	3-developing_kernel_modules/lkm_template/Makefile	/^sa_flawfinder:$/;"	t
+sa_flawfinder	3-developing_kernel_modules/min_sysinfo/Makefile	/^sa_flawfinder:$/;"	t
+sa_gcc	3-developing_kernel_modules/lkm_template/Makefile	/^sa_gcc:$/;"	t
+sa_gcc	3-developing_kernel_modules/min_sysinfo/Makefile	/^sa_gcc:$/;"	t
+sa_sparse	3-developing_kernel_modules/lkm_template/Makefile	/^sa_sparse:$/;"	t
+sa_sparse	3-developing_kernel_modules/min_sysinfo/Makefile	/^sa_sparse:$/;"	t
+scriptClientPortReadMessage	prepareEnv/agent-proxy/agent-proxy.c	/^static int scriptClientPortReadMessage(struct port_st *iport)$/;"	f	typeref:typename:int	file:
+scriptInUse	prepareEnv/agent-proxy/agent-proxy.h	/^	int scriptInUse;	\/* States whether or not the script connection is in use *\/$/;"	m	struct:port_st	typeref:typename:int
+scriptPortReadMessage	prepareEnv/agent-proxy/agent-proxy.c	/^static int scriptPortReadMessage(struct port_st *s_port)$/;"	f	typeref:typename:int	file:
+scriptRef	prepareEnv/agent-proxy/agent-proxy.h	/^	struct port_st *scriptRef;	\/* A script port refrence *\/$/;"	m	struct:port_st	typeref:struct:port_st *
+sendSpecialBreak	prepareEnv/agent-proxy/agent-proxy.c	/^static int sendSpecialBreak(struct port_st *port, char *breakString, int len)$/;"	f	typeref:typename:int	file:
+serialBreak	prepareEnv/agent-proxy/agent-proxy.c	/^static int serialBreak(struct port_st *port)$/;"	f	typeref:typename:int	file:
+serial_fd	prepareEnv/agent-proxy/kdmx/kdmx.c	/^int serial_fd;$/;"	v	typeref:typename:int
+serv_addr	prepareEnv/agent-proxy/agent-proxy.h	/^	struct sockaddr_in serv_addr;$/;"	m	struct:port_st	typeref:struct:sockaddr_in
+setRemoteSockOpts	prepareEnv/agent-proxy/agent-proxy.c	/^static void setRemoteSockOpts(int nsock)$/;"	f	typeref:typename:void	file:
+set_tty_state	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^static int set_tty_state(unsigned int sock, struct hardwire_ttystate *state)$/;"	f	typeref:typename:int	file:
+setbaudrate	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^int setbaudrate(int sock, int baud)$/;"	f	typeref:typename:int
+setcondefaults	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^int setcondefaults(unsigned int sock)$/;"	f	typeref:typename:int
+setstopbits	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^int setstopbits(unsigned int sock, char *stopbits)$/;"	f	typeref:typename:int
+setup_local_port	prepareEnv/agent-proxy/agent-proxy.c	/^static int setup_local_port(struct port_st *lport, char *port,$/;"	f	typeref:typename:int	file:
+setup_remote_port	prepareEnv/agent-proxy/agent-proxy.c	/^static int setup_remote_port(struct port_st *rport, char *host, char *port)$/;"	f	typeref:typename:int	file:
+sgttyb	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^	struct sgttyb sgttyb;$/;"	m	struct:hardwire_ttystate	typeref:struct:sgttyb	file:
+shared_counter	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_kthreads_demo.c	/^static u64 shared_counter;$/;"	v	typeref:typename:u64	file:
+show_sizeof	3-developing_kernel_modules/min_sysinfo/min_sysinfo.c	/^void show_sizeof(void)$/;"	f	typeref:typename:void
+sock	prepareEnv/agent-proxy/agent-proxy.h	/^	int sock;		\/* Socket handle *\/$/;"	m	struct:port_st	typeref:typename:int
+socklen_t	prepareEnv/agent-proxy/agent-proxy.c	/^typedef unsigned int socklen_t;$/;"	t	typeref:typename:unsigned int	file:
+spin_demo_shared	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_hrtimer_demo.c	/^struct spin_demo_shared spin_demo_shared;$/;"	v	typeref:struct:spin_demo_shared
+spin_demo_shared	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_shared.h	/^struct spin_demo_shared {$/;"	s
+spin_hrtimer_demo_exit	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_hrtimer_demo.c	/^static void __exit spin_hrtimer_demo_exit(void)$/;"	f	typeref:typename:void __exit	file:
+spin_hrtimer_demo_exit	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_hrtimer_demo.c	/^static void __exit spin_hrtimer_demo_exit(void)$/;"	f	typeref:typename:void __exit	file:
+spin_hrtimer_demo_init	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_hrtimer_demo.c	/^static int __init spin_hrtimer_demo_init(void)$/;"	f	typeref:typename:int __init	file:
+spin_hrtimer_demo_init	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_hrtimer_demo.c	/^static int __init spin_hrtimer_demo_init(void)$/;"	f	typeref:typename:int __init	file:
+spin_kthreads_demo_exit	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_kthreads_demo.c	/^static void __exit spin_kthreads_demo_exit(void)$/;"	f	typeref:typename:void __exit	file:
+spin_kthreads_demo_exit	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_kthreads_demo.c	/^static void __exit spin_kthreads_demo_exit(void)$/;"	f	typeref:typename:void __exit	file:
+spin_kthreads_demo_init	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_kthreads_demo.c	/^static int __init spin_kthreads_demo_init(void)$/;"	f	typeref:typename:int __init	file:
+spin_kthreads_demo_init	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_kthreads_demo.c	/^static int __init spin_kthreads_demo_init(void)$/;"	f	typeref:typename:int __init	file:
+staticBrkStr	prepareEnv/agent-proxy/agent-proxy.c	/^char staticBrkStr[3] = { 0xff, 0xf3, 'g' };$/;"	v	typeref:typename:char[3]
+staticBrkStrLen	prepareEnv/agent-proxy/agent-proxy.c	/^char staticBrkStrLen = 3;$/;"	v	typeref:typename:char
+stats_lock	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_hrtimer_demo.c	/^static spinlock_t stats_lock;$/;"	v	typeref:typename:spinlock_t	file:
+status_gdb_fd	prepareEnv/agent-proxy/kdmx/kdmx.c	/^int status_gdb_fd = -1;$/;"	v	typeref:typename:int
+status_gdb_file	prepareEnv/agent-proxy/kdmx/kdmx.c	/^FILE *status_gdb_file;$/;"	v	typeref:typename:FILE *
+status_trm_fd	prepareEnv/agent-proxy/kdmx/kdmx.c	/^int status_trm_fd = -1;$/;"	v	typeref:typename:int
+status_trm_file	prepareEnv/agent-proxy/kdmx/kdmx.c	/^FILE *status_trm_file;$/;"	v	typeref:typename:FILE *
+stdin_portread	prepareEnv/agent-proxy/agent-proxy.c	/^static int stdin_portread(struct port_st *port, char *buf, int size, int opts)$/;"	f	typeref:typename:int	file:
+stdin_portwrite	prepareEnv/agent-proxy/agent-proxy.c	/^static int stdin_portwrite(struct port_st *port, char *buf, int size, int opts)$/;"	f	typeref:typename:int	file:
+tarxz-pkg	3-developing_kernel_modules/lkm_template/Makefile	/^tarxz-pkg:$/;"	t
+tarxz-pkg	3-developing_kernel_modules/min_sysinfo/Makefile	/^tarxz-pkg:$/;"	t
+tasks	1-LinuxKernelConcepts/kthreads_ex.c	/^struct task_struct *tasks;$/;"	v	typeref:struct:task_struct *
+tc	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^	struct tchars tc;$/;"	m	struct:hardwire_ttystate	typeref:struct:tchars	file:
+tcp_portclose	prepareEnv/agent-proxy/agent-proxy.c	/^static void tcp_portclose(struct port_st *port)$/;"	f	typeref:typename:void	file:
+tcp_portread	prepareEnv/agent-proxy/agent-proxy.c	/^static int tcp_portread(struct port_st *port, char *buf, int size, int opts)$/;"	f	typeref:typename:int	file:
+tcp_portwrite	prepareEnv/agent-proxy/agent-proxy.c	/^static int tcp_portwrite(struct port_st *port, char *buf, int size, int opts)$/;"	f	typeref:typename:int	file:
+telnetNegotiation	prepareEnv/agent-proxy/agent-proxy.c	/^static int telnetNegotiation = 0;$/;"	v	typeref:typename:int	file:
+term_fd	prepareEnv/agent-proxy/kdmx/kdmx.c	/^int term_fd;		\/* terminal emulator pty master *\/$/;"	v	typeref:typename:int
+termio	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^	struct termio termio;$/;"	m	struct:hardwire_ttystate	typeref:struct:termio	file:
+termios	prepareEnv/agent-proxy/agent-proxy-rs232.c	/^	struct termios termios;$/;"	m	struct:hardwire_ttystate	typeref:struct:termios	file:
+timer_example_exit	1-LinuxKernelConcepts/timer_example.c	/^static void __exit timer_example_exit(void)$/;"	f	typeref:typename:void __exit	file:
+timer_example_init	1-LinuxKernelConcepts/timer_example.c	/^static int __init timer_example_init(void)$/;"	f	typeref:typename:int __init	file:
+timer_fires	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_hrtimer_demo.c	/^static u64 timer_fires;$/;"	v	typeref:typename:u64	file:
+timer_fires	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_shared.h	/^	u64 timer_fires;$/;"	m	struct:spin_demo_shared	typeref:typename:u64
+timer_work	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_shared.h	/^	u64 timer_work;$/;"	m	struct:spin_demo_shared	typeref:typename:u64
+timevaladd_usec	prepareEnv/agent-proxy/agent-proxy.c	/^static void timevaladd_usec(struct timeval *tv, unsigned long usec)$/;"	f	typeref:typename:void	file:
+timevalcmp	prepareEnv/agent-proxy/agent-proxy.c	/^static int timevalcmp(struct timeval *tv1, struct timeval *tv2)$/;"	f	typeref:typename:int	file:
+timevalsub	prepareEnv/agent-proxy/agent-proxy.c	/^static void timevalsub(struct timeval *tv1, struct timeval *tv2)$/;"	f	typeref:typename:void	file:
+total_cs_ns	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_hrtimer_demo.c	/^static u64 total_cs_ns;$/;"	v	typeref:typename:u64	file:
+total_cs_ns	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_hrtimer_demo.c	/^static u64 total_cs_ns;$/;"	v	typeref:typename:u64	file:
+total_cs_ns	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_kthreads_demo.c	/^static u64 total_cs_ns;$/;"	v	typeref:typename:u64	file:
+type	prepareEnv/agent-proxy/agent-proxy.h	/^	int type;$/;"	m	struct:port_st	typeref:typename:int
+udp_portread	prepareEnv/agent-proxy/agent-proxy.c	/^static int udp_portread(struct port_st *port, char *buf, int size, int opts)$/;"	f	typeref:typename:int	file:
+udp_portwrite	prepareEnv/agent-proxy/agent-proxy.c	/^static int udp_portwrite(struct port_st *port, char *buf, int size, int opts)$/;"	f	typeref:typename:int	file:
+usage	0-LinuxProgrammingInterface/1-file_handling/readv_writev.c	/^void usage(const char *progname) {$/;"	f	typeref:typename:void
+usage	prepareEnv/agent-proxy/agent-proxy.c	/^void usage()$/;"	f	typeref:typename:void
+usage	prepareEnv/agent-proxy/kdmx/kdmx.c	/^usage(void)$/;"	f	typeref:typename:void
+use_trylock	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_kthreads_demo.c	/^static unsigned int use_trylock = 0;$/;"	v	typeref:typename:unsigned int	file:
+use_trylock	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_kthreads_demo.c	/^static unsigned int use_trylock = 0;$/;"	v	typeref:typename:unsigned int	file:
+user_lkm_exit	3-developing_kernel_modules/code/user.c	/^static void __exit user_lkm_exit(void)$/;"	f	typeref:typename:void __exit	file:
+user_lkm_init	3-developing_kernel_modules/code/user.c	/^static int __init user_lkm_init(void)$/;"	f	typeref:typename:int __init	file:
+val1	0-LinuxProgrammingInterface/1-file_handling/ioctl_userApp.c	/^    int val1;$/;"	m	struct:my_data	typeref:typename:int	file:
+val1	0-LinuxProgrammingInterface/1-file_handling/module/ioctl_kmodule.c	/^    int val1;$/;"	m	struct:my_data	typeref:typename:int	file:
+val2	0-LinuxProgrammingInterface/1-file_handling/ioctl_userApp.c	/^    int val2;$/;"	m	struct:my_data	typeref:typename:int	file:
+val2	0-LinuxProgrammingInterface/1-file_handling/module/ioctl_kmodule.c	/^    int val2;$/;"	m	struct:my_data	typeref:typename:int	file:
+wait_event_timeout_example_exit	1-LinuxKernelConcepts/udelay_ex.c	/^static void __exit wait_event_timeout_example_exit(void)$/;"	f	typeref:typename:void __exit	file:
+wait_event_timeout_example_exit	1-LinuxKernelConcepts/wait_event_timeout_ex.c	/^static void __exit wait_event_timeout_example_exit(void)$/;"	f	typeref:typename:void __exit	file:
+wait_event_timeout_example_init	1-LinuxKernelConcepts/udelay_ex.c	/^static int __init wait_event_timeout_example_init(void)$/;"	f	typeref:typename:int __init	file:
+wait_event_timeout_example_init	1-LinuxKernelConcepts/wait_event_timeout_ex.c	/^static int __init wait_event_timeout_example_init(void)$/;"	f	typeref:typename:int __init	file:
+work_counter	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_hrtimer_demo.c	/^static u64 work_counter;$/;"	v	typeref:typename:u64	file:
+worker1	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_kthreads_demo.c	/^static struct task_struct *worker1;$/;"	v	typeref:struct:task_struct *	file:
+worker1	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_kthreads_demo.c	/^static struct task_struct *worker1;$/;"	v	typeref:struct:task_struct *	file:
+worker2	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_kthreads_demo.c	/^static struct task_struct *worker2;$/;"	v	typeref:struct:task_struct *	file:
+worker2	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_kthreads_demo.c	/^static struct task_struct *worker2;$/;"	v	typeref:struct:task_struct *	file:
+worker_thread_fn	1-LinuxKernelConcepts/1-kernel_locking/1-spinlock-int-process/spin_kthreads_demo.c	/^static int worker_thread_fn(void *data)$/;"	f	typeref:typename:int	file:
+worker_thread_fn	1-LinuxKernelConcepts/1-kernel_locking/2-spinlock-shared/spin_kthreads_demo.c	/^static int worker_thread_fn(void *data)$/;"	f	typeref:typename:int	file:
+writeScriptClients	prepareEnv/agent-proxy/agent-proxy.c	/^static int writeScriptClients(struct port_st *s_port, char *buf, int bytes,$/;"	f	typeref:typename:int	file:
