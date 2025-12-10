@@ -22,5 +22,29 @@
         "key": "ctrl+shift+c",
         "command": "workbench.action.tasks.runTask",
         "args": "Clean Kernel Module"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "workbench.action.gotoSymbol"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+shift+f12",
+        "command": "editor.action.goToReferences"
+    },
+    {
+        "key": "alt+f12",
+        "command": "editor.action.peekDefinition"
+    },
+    {
+        "key": "ctrl+f12",
+        "command": "editor.action.goToImplementation"
+    },
+    {
+        "key": "ctrl+shift+h",
+        "command": "C_Cpp.SwitchHeaderSource"
     }
 ]

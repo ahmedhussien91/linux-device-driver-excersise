@@ -1,0 +1,44 @@
+{
+    "configurations": [
+        {
+            "name": "Linux Kernel Cross-compile (RPi4)",
+            "includePath": [
+                "${workspaceFolder}/**",
+		"/opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git/source/**",
+                "/opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git/source/include/**",
+                "/opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git/source/arch/arm64/include/**",
+		"/opt/yocto/poky/5.0.8/sysroots/**"
+            ],
+            "defines": [
+                "__KERNEL__",
+                "MODULE",
+                "KBUILD_MODNAME=\"${fileBasenameNoExtension}\"",
+                "__LINUX_ARM_ARCH__=8",
+                "CONFIG_ARM64",
+                "CONFIG_64BIT"
+            ],
+            "compilerPath": "/opt/yocto/poky/5.0.8/sysroots/cortexa72-poky-linux/usr/bin/aarch64-poky-linux-gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-arm64",
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db",
+                "path": [
+                "${workspaceFolder}/**",
+		"/opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git/source/**",
+                "/opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git/source/include/**",
+                "/opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git/source/arch/arm64/include/**",
+		"/opt/yocto/poky/5.0.8/sysroots/**"
+                ]
+            },
+            "compilerArgs": [
+                "-nostdinc",
+                "-isystem", "/opt/yocto/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/13.3.0/include",
+                "-include", "/opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git/include/linux/compiler-version.h",
+                "-include", "/opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git/include/linux/kconfig.h"
+            ]
+        }
+    ],
+    "version": 4
+}
