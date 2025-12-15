@@ -140,3 +140,28 @@ boot messages on HDMI:
 enable_uart=1
 hdmi_force_hotplug=1
 ```
+
+
+
+# qt working application on vnc
+
+```sh
+QT_QPA_PLATFORM=vnc QT_QPA_VNC_PORT=5900 qt-example
+```
+
+
+
+# camera application on raspberrypi
+
+**pc:**
+
+```
+nc -l -p 5000 | ffplay -fflags nobuffer -flags low_delay -framedrop -
+```
+
+**Raspberry pi:**
+
+```sh
+libcamera-vid -t 0 --inline -o - | nc 192.168.1.11 5000
+```
+
