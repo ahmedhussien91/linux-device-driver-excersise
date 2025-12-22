@@ -1,19 +1,19 @@
 #!/bin/bash
 
-# Raspberry Pi 4 Yocto SDK Environment Setup
-# Based on BeagleBone setup
-# Usage: source ./setup_env.sh  (or . ./setup_env.sh)
+# BeagleBone Black Yocto SDK Environment Setup
+# Adapted from Raspberry Pi setup
+# Usage: source ./setup_bb_env.sh  (or . ./setup_bb_env.sh)
 
 # Check if script is being sourced
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     echo "⚠️  This script should be sourced, not executed directly."
-    echo "Usage: source ./setup_env.sh"
-    echo "   or: . ./setup_env.sh"
+    echo "Usage: source ./setup_bb_env.sh"
+    echo "   or: . ./setup_bb_env.sh"
     exit 1
 fi
 
-# Set up environment variables for Raspberry Pi 4 cross-compilation
-echo "Setting up Raspberry Pi 4 Yocto SDK environment..."
+# Set up environment variables for BeagleBone Black cross-compilation
+echo "Setting up BeagleBone Black Yocto SDK environment..."
 
 # Unset LD_LIBRARY_PATH to avoid SDK conflicts
 if [ -n "$LD_LIBRARY_PATH" ]; then
@@ -22,34 +22,21 @@ if [ -n "$LD_LIBRARY_PATH" ]; then
 fi
 
 # Source the Yocto SDK environment
-if [ -f "/opt/yocto/poky/5.0.8/environment-setup-cortexa72-poky-linux" ]; then
+if [ -f "/opt/yocto/poky/5.0.14/environment-setup-armv7at2hf-neon-poky-linux-gnueabi" ]; then
     echo "Sourcing Yocto SDK environment..."
-    . /opt/yocto/poky/5.0.8/environment-setup-cortexa72-poky-linux
+    . /opt/yocto/poky/5.0.14/environment-setup-armv7at2hf-neon-poky-linux-gnueabi
     echo "✅ Yocto SDK environment loaded"
 else
     echo "❌ Yocto SDK not found. Please build the SDK first:"
-    echo "   bitbake -c populate_sdk <image-name>"
+    echo "   ./bitbake_bb_rpi -h bb -d sysv -t custom-image -c"
     return 1
 fi
 
-# Set kernel build directory - try to find the correct one
-POSSIBLE_KDIRS=(
-    "/opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/build"
-    "/opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git"
-)
+# Set kernel build directory
+export KDIR="/opt/yocto/tmp/work/beaglebone-poky-linux-gnueabi/linux-bb.org/6.6.32+git/build"
 
-for kdir in "${POSSIBLE_KDIRS[@]}"; do
-    if [ -d "$kdir" ]; then
-        export KDIR="$kdir"
-        break
-    fi
-done
-
-if [ -z "$KDIR" ]; then
-    echo "❌ Kernel build directory not found. Tried:"
-    for kdir in "${POSSIBLE_KDIRS[@]}"; do
-        echo "   $kdir"
-    done
+if [ ! -d "$KDIR" ]; then
+    echo "❌ Kernel build directory not found: $KDIR"
     echo "Please build the kernel first: bitbake virtual/kernel"
     return 1
 fi
@@ -71,7 +58,7 @@ else
 fi
 
 echo ""
-echo "🎯 Raspberry Pi 4 development environment ready!"
+echo "🎯 BeagleBone Black development environment ready!"
 echo "You can now build kernel modules with: make"
 echo ""
 echo "Example module Makefile should include:"
