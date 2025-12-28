@@ -282,7 +282,7 @@ deploy_rootfs() {
     print_status "Deploying root filesystem to NFS..."
     
     # Find rootfs image
-    ROOTFS_PATH=$(find /opt/yocto/tmp/deploy/images/beaglebone-yocto -name "*rootfs.tar.*" | head -1)
+    ROOTFS_PATH=$(find /opt/yocto/ycoto-excersise/bb-build-sysv/deploy-ti/images/beaglebone -name "*rootfs.tar.*" | head -1)
     if [ -z "$ROOTFS_PATH" ]; then
         print_warning "Root filesystem archive not found, skipping rootfs deployment"
         return 0
@@ -304,16 +304,8 @@ deploy_rootfs() {
         exit 1
     fi
     
-    # Backup existing NFS root if it exists
-    if [ -d "$NFS_ROOT.backup" ]; then
-        rm -rf "$NFS_ROOT.backup"
-    fi
-    if [ -d "$NFS_ROOT" ]; then
-        mv "$NFS_ROOT" "$NFS_ROOT.backup"
-    fi
-    
     # Move new rootfs to NFS location
-    mv "$TEMP_DIR" "$NFS_ROOT"
+    sudo mv "$TEMP_DIR" "$NFS_ROOT"
     
     print_success "Root filesystem deployed to $NFS_ROOT"
 }
