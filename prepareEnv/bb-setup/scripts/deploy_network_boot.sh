@@ -305,7 +305,9 @@ deploy_rootfs() {
     fi
     
     # Move new rootfs to NFS location
-    sudo mv "$TEMP_DIR" "$NFS_ROOT"
+    print_status "Deploying rootfs to $NFS_ROOT..."
+    sudo rm -rf "$NFS_ROOT"/*
+    sudo mv "$TEMP_DIR"/* "$NFS_ROOT"
     
     print_success "Root filesystem deployed to $NFS_ROOT"
 }
