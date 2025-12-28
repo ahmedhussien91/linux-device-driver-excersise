@@ -3,7 +3,7 @@
 ifneq ($(KERNELRELEASE),)
 obj-m := $(PROGS)
 else
-KDIR ?= /home/ahmed/Documents/Linux_course/Linux-yocto-Excersises/linux/code/rpi4/linux/
+KDIR ?= /opt/yocto/tmp/work/raspberrypi4_64-poky-linux/linux-raspberrypi/6.6.63+git/linux-raspberrypi-6.6.63+git
 # Source files
 SRCS := $(wildcard *.c)
 # Module object files

@@ -106,16 +106,40 @@ This will:
 
 ### Step 4: Deploy the module to BeagleBone
 
-**Option A: Via SCP (if networking is set up)**
+**Option A: Network Boot Deployment (Recommended)**
+
+BeagleBone Black is configured for network boot with:
+- IP: 192.168.1.107
+- NFS Root: `/srv/nfs4/bb_busybox`
+- TFTP Server: 192.168.1.11
 
 ```bash
-scp mymod.ko root@192.168.1.101:/tmp/
-ssh root@192.168.1.101 "insmod /tmp/mymod.ko"
-ssh root@192.168.1.101 "dmesg | tail"
-ssh root@192.168.1.101 "rmmod mymod"
+# Quick deployment using script
+sudo ../../prepareEnv/bb-setup/scripts/deploy_modules.sh
+
+# Test specific module loading
+../../prepareEnv/bb-setup/scripts/deploy_modules.sh --test mymod
 ```
 
-**Option B: Via SD card**
+**Manual network deployment:**
+```bash
+# Copy module to NFS root
+sudo cp mymod.ko /srv/nfs4/bb_busybox/lib/modules/$(uname -r)/extra/
+
+# Load on BeagleBone via SSH
+ssh root@192.168.1.107 "modprobe mymod && dmesg | tail"
+```
+
+**Option B: Via SCP (if networking is set up)**
+
+```bash
+scp mymod.ko root@192.168.1.107:/tmp/
+ssh root@192.168.1.107 "insmod /tmp/mymod.ko"
+ssh root@192.168.1.107 "dmesg | tail"
+ssh root@192.168.1.107 "rmmod mymod"
+```
+
+**Option C: Via SD card**
 
 1. Copy to SD card:
 ```bash

@@ -18,15 +18,19 @@
 
 5. Flashing and Building
 
-   #### 1. Flashing BeagleBone Image
+   #### 1. Network Boot Setup (Recommended)
+
+   [bb_network_boot](bb_network_boot.md)
+
+   #### 2. Flashing BeagleBone Image
 
    [bb_flash_sd](bb_flash_sd.md)
 
-   #### 2. Building Linux
+   #### 3. Building Linux
 
    [bb_build_linux](bb_build_linux.md)
 
-   #### 3. Build Modules with SDK
+   #### 4. Build Modules with SDK
 
    ```bash
    . /opt/yocto/poky/5.0.14/environment-setup-armv7at2hf-neon-poky-linux-gnueabi

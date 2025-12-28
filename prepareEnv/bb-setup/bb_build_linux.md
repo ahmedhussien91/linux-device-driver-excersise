@@ -20,10 +20,10 @@ This gives you:
 
 ##### **2. Edit kernel source directly like a normal Git repo**
 
-You now treat this directory like your own kernel repo:
+After `devtool modify linux-bb.org`, you get a kernel workspace at:
 
 ```
-workspace/sources/linux-yocto/
+/opt/yocto/ycoto-excersise/bb-build-sysv/workspace/sources/linux-bb.org/
     |-- drivers/
     |-- arch/
     |-- include/
@@ -43,7 +43,7 @@ This is *your* playground.
 ##### **3. Rebuild JUST the kernel (super fast)**
 
 ```bash
-devtool build linux-yocto
+devtool build linux-bb.org
 ```
 
 This is faster than bitbake because:
@@ -56,30 +56,73 @@ It only rebuilds kernel, modules, dtb.
 
 ##### **4. Deploy to BeagleBone Black instantly**
 
-A) If the board is reachable via SSH:
+A) **Network Boot Deployment (TFTP + NFS)**
 
+BeagleBone Black is configured for network boot:
+- **IP**: 192.168.1.107
+- **Server IP**: 192.168.1.11
+- **TFTP**: Kernel and DTB from `/srv/tftp`
+- **NFS**: Root filesystem from `/srv/nfs4/bb_busybox`
+
+**Boot command:**
 ```bash
-devtool deploy-target linux-yocto root@192.168.1.101
+bootcmd=setenv serverip 192.168.1.11; setenv ipaddr 192.168.1.107; tftpboot 88000000 am335x-boneblack.dtb; tftpboot 0x82000000 zImage_native_bb; bootz 0x82000000 - 88000000;
 ```
 
-This copies:
+**Quick deployment using devtool:**
+```bash
+# Complete build and deployment
+sudo ../../prepareEnv/bb-setup/scripts/deploy_network_boot.sh all
 
-- `zImage`
-- DTBs
-- Overlays
-- Kernel modules
+# Or step by step:
+sudo ../../prepareEnv/bb-setup/scripts/deploy_network_boot.sh build   # devtool modify + build
+sudo ../../prepareEnv/bb-setup/scripts/deploy_network_boot.sh deploy  # devtool deploy-target
+```
 
-directly into the correct directories on the running filesystem.
+**Manual devtool workflow:**
+```bash
+cd /opt/yocto/ycoto-excersise
+./bitbake_bb_rpi -h bb -d sysv -s
+source poky/5.0.14/oe-init-build-env bb-build-sysv
 
-After that, just reboot:
+# Set up kernel workspace (once)
+devtool modify linux-bb.org
+
+# Build kernel
+devtool build linux-bb.org
+
+# Deploy to TFTP
+devtool deploy-target linux-bb.org /srv/tftp
+
+# Copy files to expected names
+sudo cp /srv/tftp/boot/zImage /srv/tftp/zImage_native_bb
+sudo cp /srv/tftp/boot/am335x-boneblack.dtb /srv/tftp/am335x-boneblack.dtb
+```
+
+**Manual deployment:**
+```bash
+# Deploy kernel to TFTP
+sudo cp arch/arm/boot/zImage /srv/tftp/zImage_native_bb
+
+# Deploy device tree to TFTP
+sudo cp arch/arm/boot/dts/ti/omap/am335x-boneblack.dtb /srv/tftp/
+
+# Deploy modules to NFS root
+sudo cp -r tmp/work/beaglebone-poky-linux-gnueabi/linux-bb.org/*/image/lib/modules/* /srv/nfs4/bb_busybox/lib/modules/
+
+# Restart BeagleBone to load new kernel
+ssh root@192.168.1.107 reboot
+```
+
+B) **SSH Deployment (if board is reachable)**
 
 ```bash
-ssh root@192.168.1.101 reboot
+devtool deploy-target linux-yocto root@192.168.1.107
 ```
 
 ##### **5. Alternative: Manual deployment via SD card**
 
-If SSH is not available, you can copy files manually:
+If network boot is not available, you can copy files manually to SD card:
 
 1. Build the kernel:
    ```bash

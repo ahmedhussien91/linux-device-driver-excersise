@@ -21,6 +21,14 @@ make
 - ✅ Automatic kernel build directory detection
 - ✅ Environment validation and error checking
 - ✅ ARM 32-bit architecture support
+- ✅ Network boot deployment scripts (TFTP + NFS)
+- ✅ Automated module deployment to NFS root
+
+**Network Boot Configuration:**
+- BeagleBone IP: 192.168.1.107
+- Server IP: 192.168.1.11
+- TFTP: `/srv/tftp` (kernel + DTB)
+- NFS: `/srv/nfs4/bb_busybox` (root filesystem)
 
 ### Raspberry Pi 4 Setup
 For cross-compiling kernel modules for Raspberry Pi 4:
@@ -75,9 +83,12 @@ linux-device-driver-excersise/
 │   ├── bb-setup/                 # BeagleBone Black setup
 │   │   ├── setup_bb.sh          # Main BeagleBone environment setup
 │   │   ├── scripts/
-│   │   │   └── setup_bb_env.sh  # Core environment configuration
+│   │   │   ├── setup_bb_env.sh  # Core environment configuration
+│   │   │   ├── deploy_network_boot.sh # Deploy kernel/DTB/rootfs via TFTP/NFS
+│   │   │   └── deploy_modules.sh # Deploy kernel modules to NFS root
 │   │   ├── bb_build_modules.md  # Module building guide
 │   │   ├── bb_build_linux.md    # Linux kernel building guide
+│   │   ├── bb_network_boot.md   # Network boot configuration guide
 │   │   └── bb_flash_sd.md       # SD card flashing guide
 │   └── rpi-setup/               # Raspberry Pi 4 setup
 │       ├── setup_rpi.sh         # Main Raspberry Pi environment setup
