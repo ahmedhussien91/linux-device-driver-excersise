@@ -4,7 +4,7 @@
 - Button between P9_12 (GPIO1_28) and GND
 
 ## Build
-./prepareEnv/bb-setup/setup_bb.sh
+. ../../../../prepareEnv/bb-setup/setup_bb.sh
 make
 
 ## Load
