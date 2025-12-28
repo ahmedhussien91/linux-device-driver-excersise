@@ -56,6 +56,17 @@ fi
 
 echo "✅ KDIR set to: $KDIR"
 
+# Set deployment directory for Raspberry Pi 4
+export DEPLOY_DIR="root@192.168.1.101:/tmp/"
+export DEPLOY_METHOD="scp"
+
+if [ ! -d "$DEPLOY_DIR" ]; then
+    echo "⚠️  Deployment directory not found: $DEPLOY_DIR"
+    echo "Please ensure NFS root is properly mounted"
+fi
+
+echo "✅ DEPLOY_DIR set to: $DEPLOY_DIR"
+
 # Verify cross-compilation setup
 echo "Verifying cross-compilation setup..."
 echo "ARCH: $ARCH"
@@ -81,3 +92,5 @@ echo "Environment variables set:"
 echo "  ARCH=$ARCH"
 echo "  CROSS_COMPILE=$CROSS_COMPILE"
 echo "  KDIR=$KDIR"
+echo "  DEPLOY_DIR=$DEPLOY_DIR"
+echo "  DEPLOY_METHOD=$DEPLOY_METHOD"
