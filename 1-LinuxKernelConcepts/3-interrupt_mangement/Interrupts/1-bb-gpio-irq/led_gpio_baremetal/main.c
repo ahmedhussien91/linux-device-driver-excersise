@@ -20,6 +20,21 @@
 
 #define GPIO1_28                (1u << 28)
 
+/* --- WDT (لمعطّل الـ Watchdog Timer) --- */
+#define WDT_BASE   0x44E35000
+
+#define WDT_WSPR   (*(volatile unsigned int *)(WDT_BASE + 0x48))
+#define WDT_WWPS   (*(volatile unsigned int *)(WDT_BASE + 0x34))
+
+static void wdt_disable(void)
+{
+    WDT_WSPR = 0xAAAA;
+    while (WDT_WWPS & (1 << 4));
+
+    WDT_WSPR = 0x5555;
+    while (WDT_WWPS & (1 << 4));
+}
+
 /* بسيط: delay loop */
 static void delay(volatile uint32_t n) {
     while (n--) { __asm__ volatile ("nop"); }
@@ -51,6 +66,7 @@ static void gpio1_28_output(void) {
 }
 
 int main(void) {
+    wdt_disable();
     gpio1_enable_clock();
     pinmux_p9_12_to_gpio();
     gpio1_28_output();
