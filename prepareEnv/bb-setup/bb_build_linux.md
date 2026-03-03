@@ -83,7 +83,6 @@ sudo ../../prepareEnv/bb-setup/scripts/deploy_network_boot.sh deploy  # devtool 
 ```bash
 cd /opt/yocto/ycoto-excersise
 ./bitbake_bb_rpi -h bb -d sysv -s
-source poky/5.0.14/oe-init-build-env bb-build-sysv
 
 # Set up kernel workspace (once)
 devtool modify linux-bb.org
@@ -93,6 +92,20 @@ devtool build linux-bb.org
 
 # Deploy to TFTP
 devtool deploy-target linux-bb.org /srv/tftp
+```
+
+**Get patch to apply it to the recipe using devtool**
+
+```bash
+# Get patch to apply to recipe
+devtool finish linux-bb.org meta-sw
+```
+
+This will:
+- Generate patches from your workspace commits
+- Create/update the recipe with patches
+- Clean up the workspace
+
 
 # Copy files to expected names
 sudo cp /srv/tftp/boot/zImage /srv/tftp/zImage_native_bb
@@ -102,13 +115,13 @@ sudo cp /srv/tftp/boot/am335x-boneblack.dtb /srv/tftp/am335x-boneblack.dtb
 **Manual deployment:**
 ```bash
 # Deploy kernel to TFTP
-sudo cp arch/arm/boot/zImage /srv/tftp/zImage_native_bb
+sudo cp /opt/yocto/tmp/work/beaglebone-poky-linux-gnueabi/linux-bb.org/6.6.32+git/linux-bb.org-6.6.32+git/arch/arm/boot/zImage /srv/tftp/zImage_native_bb
 
 # Deploy device tree to TFTP
-sudo cp arch/arm/boot/dts/ti/omap/am335x-boneblack.dtb /srv/tftp/
+sudo cp /opt/yocto/tmp/work/beaglebone-poky-linux-gnueabi/linux-bb.org/6.6.32+git/linux-bb.org-6.6.32+git/arch/arm/boot/dts/ti/omap/am335x-boneblack.dtb /srv/tftp/
 
 # Deploy modules to NFS root
-sudo cp -r tmp/work/beaglebone-poky-linux-gnueabi/linux-bb.org/*/image/lib/modules/* /srv/nfs4/bb_busybox/lib/modules/
+sudo cp -r /opt/yocto/tmp/work/beaglebone-poky-linux-gnueabi/linux-bb.org/6.6.32+git/image/lib/modules/* /srv/nfs4/bb_busybox/lib/modules/
 
 # Restart BeagleBone to load new kernel
 ssh root@192.168.1.107 reboot

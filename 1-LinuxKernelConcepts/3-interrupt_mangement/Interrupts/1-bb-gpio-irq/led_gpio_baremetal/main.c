@@ -18,7 +18,7 @@
 #define GPIO_SETDATAOUT         (GPIO1_BASE + 0x194u)
 #define GPIO_CLEARDATAOUT       (GPIO1_BASE + 0x190u)
 
-#define GPIO1_28                (1u << 28)
+#define GPIO1_28                (1u << 12)  /* P8.12 */
 
 /* --- WDT (لمعطّل الـ Watchdog Timer) --- */
 #define WDT_BASE   0x44E35000

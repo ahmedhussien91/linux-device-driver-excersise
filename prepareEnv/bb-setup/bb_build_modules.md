@@ -80,7 +80,7 @@ MODULE_DESCRIPTION("Simple test module built on PC for BeagleBone Black");
 obj-m := mymod.o
 
 # Point this to the Yocto kernel *build* directory
-KDIR ?= /opt/yocto/tmp/work/beaglebone-poky-linux-gnueabi/linux-bb.org/6.6.32+git/build
+KDIR ?= /opt/yocto/tmp/work/beaglebone-poky-linux-gnueabi/linux-bb.org/6.6.32+git/linux-bb.org-6.6.32+git
 
 all:
 	$(MAKE) -C $(KDIR) M=$(PWD) modules

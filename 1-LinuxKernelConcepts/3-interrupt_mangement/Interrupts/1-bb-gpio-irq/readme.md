@@ -10,7 +10,8 @@ make
 ## Load
 sudo cp gpio_irq.ko ""/srv/nfs4/bb_busybox/lib/modules/"
 ssh root@192.168.1.107 "modeprobe gpio_irq"
-# ssh root@192.168.1.107 insmod /lib/modules/gpio_irq.ko
+
+ssh root@192.168.1.107 insmod /lib/modules/gpio_irq.ko
 
 
 ## Test
@@ -35,3 +36,8 @@ cat /sys/kernel/debug/pinctrl/44e10800.pinmux-pinctrl-single/pins
 ## build another dts
 
 CONFIG_SOC_AM33XX
+
+
+# BB Interrupts
+
+![image-20260106065645538](./assets/image-20260106065645538.png)

@@ -33,7 +33,7 @@ else
 fi
 
 # Set kernel build directory
-export KDIR="/opt/yocto/tmp/work/beaglebone-poky-linux-gnueabi/linux-bb.org/6.6.32+git/build"
+export KDIR="/opt/yocto/tmp/work/beaglebone-poky-linux-gnueabi/linux-bb.org/6.6.32+git/linux-bb.org-6.6.32+git"
 
 if [ ! -d "$KDIR" ]; then
     echo "❌ Kernel build directory not found: $KDIR"
